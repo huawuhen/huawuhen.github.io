@@ -5,6 +5,8 @@
     "avatarUrl":"https://avatars.githubusercontent.com/u/19904710?v=4",
     "faviconUrl":"https://avatars.githubusercontent.com/u/19904710?v=4",
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
+    "style":"<style>#postBody{font-size:20px}</style>",
+    "script":"<script async src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'></script>",
     "singlePage":["about"],
     "urlMode":"pinyin",
     "onePageListNum":10,
