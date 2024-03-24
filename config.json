@@ -1,15 +1,16 @@
 {
     "title":"花花部落格",
+    "displayTitle":"帅",
     "subTitle":"花花的自留地",
     "homeUrl":"https://1991321.xyz",
     "avatarUrl":"https://avatars.githubusercontent.com/u/19904710?v=4",
     "faviconUrl":"https://avatars.githubusercontent.com/u/19904710?v=4",
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
-    "GMEEK_VERSION":"last",
     "urlMode":"pinyin",
     "onePageListNum":10,
     "i18n":"CN",
     "UTC":8,
     "startSite":"08/08/2008",
-    "commentLabelColor":"#006b75"
+    "commentLabelColor":"#006b75",
+    "GMEEK_VERSION":"last"
 }
