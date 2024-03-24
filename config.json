@@ -5,12 +5,12 @@
     "avatarUrl":"https://avatars.githubusercontent.com/u/19904710?v=4",
     "faviconUrl":"https://avatars.githubusercontent.com/u/19904710?v=4",
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
-    "singlePage":["about"]，
-    "urlMode":"pinyin",
+    "singlePage":["about"],
     "onePageListNum":10,
     "i18n":"CN",
     "UTC":8,
     "startSite":"08/08/2008",
     "commentLabelColor":"#006b75",
+    "urlMode":"pinyin",
     "GMEEK_VERSION":"last"
 }
