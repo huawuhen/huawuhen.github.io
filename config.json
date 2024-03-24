@@ -12,6 +12,5 @@
     "startSite":"08/08/2008",
     "commentLabelColor":"#006b75",
     "urlMode":"pinyin"，
-    "script":"<script>var e=document.createElement('iframe');e.src='https://mini.homwei.link/chat/share?shareId=9w51z1ywd7pgrylyssdxzmhz';e.style.width='50%';e.style.height='50%';e.frameBorder='0';e.allow='microphone';document.body.appendChild(e);</script>",
     "GMEEK_VERSION":"last"
 }
