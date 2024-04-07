@@ -30,10 +30,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 .SideNav{min-width: 360px;}
 .SideNav-icon{margin-right: 16px}
-.SideNav-item .Label{color: #fff;margin-left:8px;}
+.SideNav-item .Label{color: #fff;margin-left:4px;}
 .d-flex{min-width:0;}
 .listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
-.listLabels{white-space:nowrap;}
+.listLabels{white-space:nowrap;display:flex;}
 .listLabels object{max-height:16px;max-width:24px;}
 
 @media (max-width: 600px) {
@@ -51,32 +51,44 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h1>
     <img src="https://avatars.githubusercontent.com/u/19904710?v=4" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">花花部落格</a></h1>
 <div class="title-right">
-    <a href="https://blog.19940816.xyz/tag.html"><button id="buttonSearch" class="btn btn-invisible circle" title="搜索">
+    <a href="https://blog.19940816.xyz/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索">
         <svg class="octicon" width="16" height="16" >
             <path id="pathSearch" fill-rule="evenodd"></path>
         </svg>
-    </button></a>
-    <a href="https://blog.19940816.xyz/about.html"><button class="btn btn-invisible circle" title="关于我">
+    </a>
+    
+    <a href="https://blog.19940816.xyz/about.html" class="btn btn-invisible circle" title="关于我">
         <svg class="octicon" width="16" height="16" >
             <path id="关于我" fill-rule="evenodd"></path>
         </svg>
-    </button></a>
-    <a href="https://blog.19940816.xyz/rss.xml" target="_blank"><button id="buttonRSS" class="btn btn-invisible circle" title="RSS">
+    </a>
+    <a href="https://blog.19940816.xyz/rss.xml" target="_blank" id="buttonRSS" class="btn btn-invisible circle" title="RSS">
         <svg class="octicon" width="16" height="16" >
             <path id="pathRSS" fill-rule="evenodd"></path>
         </svg>
-    </button></a>
-    <button class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题">
+    </a>
+    <a class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题">
         <svg class="octicon" width="16" height="16" >
             <path id="themeSwitch" fill-rule="evenodd"></path>
         </svg>
-    </button>
+    </a>
 </div>
 </div>
     <div id="content">
 <div style="margin-bottom: 16px;">花花的自留地</div>
 <nav class="SideNav border">
-<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/yi-ge-ren-zhen-de-hao-ma.html">
+<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/yi-shi-mian-kai-shi-xin-de-yi-nian-20160228.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">以失眠开始新的一年20160228</span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#5BBAAE"><object><a style="color:#fff" href="tag.html#个人心情">个人心情</a></object></span>
+        <span class="Label LabelTime" style="background-color:#bc4c00">2024-03-24</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/yi-ge-ren-zhen-de-hao-ma.html">
     <div class="d-flex flex-items-center">
         <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
         </svg>
@@ -188,6 +200,8 @@ for(var i=0;i<iconTOP.length;i++){
 for(var i=0;i<iconPost.length;i++){
     iconPost[i].setAttribute("d",IconList["post"]);
 }
+
+
 
 document.getElementById("关于我").setAttribute("d",value=IconList["about"]);
 </script>
