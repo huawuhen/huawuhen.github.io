@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://blog.19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://blog.19940816.xyz</link></image><lastBuildDate>Sun, 07 Apr 2024 13:42:42 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker安装mysql与phpmyadmin</title><link>https://blog.19940816.xyz/post/docker-an-zhuang-mysql-yu-phpmyadmin.html</link><description># 准备&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://blog.19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://blog.19940816.xyz</link></image><lastBuildDate>Thu, 11 Apr 2024 11:45:47 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker一键安装支持搜索的chatgpt</title><link>https://blog.19940816.xyz/post/docker-yi-jian-an-zhuang-zhi-chi-sou-suo-de-chatgpt.html</link><description># 说明与准备&#13;
+&#13;
+- 此项目结合了freegpt35、搜索、nextchat&#13;
+&#13;
+- 对VSP的IP有要较高的要求，IP解锁chatgpt&#13;
+&#13;
+# 安装&#13;
+&#13;
+```&#13;
+docker run -d --name free-ask-internet -p 3000:3000 -p 8000:8000 --add-host=freegpt35:127.0.0.1 --add-host=backend:127.0.0.1 --add-host=searxng:127.0.0.1 wbuntu/free-ask-internet:v0.0.1&#13;
+```&#13;
+&#13;
+运行后IP:3000即可访问，如果对话返回的只有链接，说明你的IP不行。</description><guid isPermaLink="true">https://blog.19940816.xyz/post/docker-yi-jian-an-zhuang-zhi-chi-sou-suo-de-chatgpt.html</guid><pubDate>Thu, 11 Apr 2024 11:45:20 +0000</pubDate></item><item><title>docker安装mysql与phpmyadmin</title><link>https://blog.19940816.xyz/post/docker-an-zhuang-mysql-yu-phpmyadmin.html</link><description># 准备&#13;
 - docker环境&#13;
 # 安装mysql&#13;
 ` docker run --name mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7 `&#13;
