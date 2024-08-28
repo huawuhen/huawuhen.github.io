@@ -4,8 +4,12 @@
 ` docker run --name mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7 `
 12345是root密码
 为了轻便使用了旧版本5.7，故没用映射本地文件
-## 7.0带映射
-` docker run -d --name mydb -v mysql:/var/lib/mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=zou123456 mysql `
+## 8.0带映射
+` docker run -d --name mydb -v root/docker/mysql:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=hua1991 mysql:8.0.39 `
+
+hua1991 为root密码
+
+---
 
 ## compose安装8.0
 ```
