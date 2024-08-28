@@ -5,9 +5,9 @@
 12345是root密码
 为了轻便使用了旧版本5.7，故没用映射本地文件
 ## 8.0带映射
-` docker run -d --name mydb -v root/docker/mysql:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=hua1991 mysql:8.0.39 `
+` docker run -d --name mydb -v ./mysql:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=hua1991 mysql:8.0.39 `
 
-hua1991 为root密码
+> ./mysql:意思是宿主机当前目录下运行指令时自动创建一个mysql目录，mysql一般不升级，docker run就run一次所以这里我用了相对目录。建议用绝对路径这样你后期更新容器方便；hua1991： 为root密码
 
 ---
 
