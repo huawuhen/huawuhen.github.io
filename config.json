@@ -7,8 +7,8 @@
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
     "singlePage":["about"],
     "urlMode":"pinyin",
-    "allHead":"<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0107452261760390"
-     crossorigin="anonymous"></script>"，
+    "script":"<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0107452261760390"
+     crossorigin="anonymous"></script>",
     "onePageListNum":10,
     "i18n":"CN",
     "UTC":8,
