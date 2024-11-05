@@ -8,7 +8,7 @@
     "singlePage":["about"],
     "urlMode":"pinyin",
     "style":"<style>#postBody{font-size:20px}</style>",
-    "script":"< script async src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0107452261760390" crossorigin = "anonymous" > < /script>"，
+    "script":"<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0107452261760390"   crossorigin="anonymous"></script>"，
     "onePageListNum":10,
     "i18n":"CN",
     "UTC":8,
