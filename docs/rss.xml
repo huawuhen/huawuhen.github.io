@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Tue, 05 Nov 2024 10:59:40 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>部署hugging face的免费模型</title><link>https://19940816.xyz/post/bu-shu-hugging%20face-de-mian-fei-mo-xing.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Mon, 11 Nov 2024 08:05:39 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>VPS购入后基本常用设置与脚本</title><link>https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html</link><description># 第一：脚本&#13;
+## 测速回国&#13;
+` wget -qO- git.io/besttrace | bash `&#13;
+&#13;
+# 设置时区&#13;
+` timedatectl set-timezone Asia/Shanghai `&#13;
+&#13;
+# Docker安装&#13;
+` curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; sh get-docker.sh `&#13;
+会自动安装 Docker Compose 组件，调用命令是：docker compose。</description><guid isPermaLink="true">https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html</guid><pubDate>Mon, 11 Nov 2024 07:34:56 +0000</pubDate></item><item><title>部署hugging face的免费模型</title><link>https://19940816.xyz/post/bu-shu-hugging%20face-de-mian-fei-mo-xing.html</link><description># 前言&#13;
 hugging 有很多暂时免费的模型，以下介绍两种部署方式并转换为兼容openai的api。</description><guid isPermaLink="true">https://19940816.xyz/post/bu-shu-hugging%20face-de-mian-fei-mo-xing.html</guid><pubDate>Tue, 05 Nov 2024 10:59:13 +0000</pubDate></item><item><title>Docker容器管理portainer-ce中文版国内镜像</title><link>https://19940816.xyz/post/Docker-rong-qi-guan-li-portainer-ce-zhong-wen-ban-guo-nei-jing-xiang.html</link><description># 一键，支持x86\arm&#13;
 ` docker run -d --restart=always --name='portainer' -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `&#13;
 &#13;
