@@ -109,6 +109,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h1>Docker安装</h1>
 <p><code class="notranslate">curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; sh get-docker.sh</code><br>
 会自动安装 Docker Compose 组件，调用命令是：docker compose。</p>
+<h2>安装docker pt管理</h2>
+<p><code class="notranslate">docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest</code></p>
 <h1>安装代理</h1>
 <p><code class="notranslate">wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh &amp;&amp; bash tcp-wss.sh</code></p>
 <h1>bbr加速</h1>

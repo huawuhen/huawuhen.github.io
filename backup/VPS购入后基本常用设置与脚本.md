@@ -8,6 +8,8 @@
 # Docker安装
 ` curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。
+## 安装docker pt管理
+` docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
 
 # 安装代理
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `
