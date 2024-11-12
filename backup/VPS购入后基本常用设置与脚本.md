@@ -1,6 +1,12 @@
 # 第一：脚本
-## 测速回国
+## 三网测速
+` bash <(curl -sL https://raw.githubusercontent.com/i-abc/Speedtest/main/speedtest.sh) `
+` bash <(curl -Lso- https://www.infski.com/files/superspeed.sh) `
+## 测速回国路由
 ` wget -qO- git.io/besttrace | bash `
+## 解锁测试（第一步选只跨国平台)
+` bash <(curl -sL Media.Check.Place) `
+
 
 # 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
