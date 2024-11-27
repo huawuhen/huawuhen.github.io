@@ -1,4 +1,8 @@
 # 第一：脚本
+## 融合怪脚本-首推
+```
+curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
+```
 ## 三网测速
 ` bash <(curl -sL https://raw.githubusercontent.com/i-abc/Speedtest/main/speedtest.sh) `
 ` bash <(curl -Lso- https://www.infski.com/files/superspeed.sh) `
