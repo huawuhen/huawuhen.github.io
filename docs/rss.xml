@@ -1,5 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Wed, 27 Nov 2024 14:56:38 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>国内云主机gost隧道中转解决telegram mtproxy无法使用问题</title><link>https://19940816.xyz/post/guo-nei-yun-zhu-ji-gost-sui-dao-zhong-zhuan-jie-jue-telegram%20mtproxy-wu-fa-shi-yong-wen-ti.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Wed, 25 Dec 2024 16:24:30 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>Docker部署youtube bilibili下载转码格式网站</title><link>https://19940816.xyz/post/Docker-bu-shu-youtube%20bilibili-xia-zai-zhuan-ma-ge-shi-wang-zhan.html</link><description># 前言&#13;
+- 本项目目前只支持youtubei bilibili&#13;
+# 部署&#13;
+1. ` docker volume create vol `&#13;
+2. ` docker run -it -d --name youtube-dl-rest -p 8080:80 -v vol:/Youtube-dl-REST imgxx/youtube-dl-rest `&#13;
+&#13;
+然后浏览器打开ip:8080即可，支持转换音频下载，不同清晰度，下载速度不经过服务器，速度很快；&#13;
+&#13;
+![newscreen7184203.jpg](https://pic4.58cdn.com.cn/nowater/webim/big/n_v21486d9b24bd644d58627d9cbfa74bac2.jpg)&#13;
+&#13;
+## 修改config&#13;
+&#13;
+- 默认带的cookies如果失效，请修改为自己的；&#13;
+宿主机访问这个文件&#13;
+```&#13;
+/var/lib/docker/volumes/vol/_data/cookies.txt&#13;
+```&#13;
+### 获取自己的cookies&#13;
+&#13;
+你需要[Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) 浏览器插件。</description><guid isPermaLink="true">https://19940816.xyz/post/Docker-bu-shu-youtube%20bilibili-xia-zai-zhuan-ma-ge-shi-wang-zhan.html</guid><pubDate>Wed, 25 Dec 2024 16:24:05 +0000</pubDate></item><item><title>国内云主机gost隧道中转解决telegram mtproxy无法使用问题</title><link>https://19940816.xyz/post/guo-nei-yun-zhu-ji-gost-sui-dao-zhong-zhuan-jie-jue-telegram%20mtproxy-wu-fa-shi-yong-wen-ti.html</link><description># 前言&#13;
 - Gost一款支持加密隧道工具&#13;
 - 项目：https://github.com/KANIKIG/Multi-EasyGost&#13;
 # 准备&#13;
