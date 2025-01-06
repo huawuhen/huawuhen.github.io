@@ -152,7 +152,7 @@ winscp上传XXX-ax3000t-sysupgrade.bin到/tmp，密码即wifi密码。然后ssh�
 </blockquote>
 <ol start="2">
 <li>下载对应架构的包<br>
-<a href="https://github.com/xiaorouji/openwrt-passwall/releases"></a><br>
+<a href="https://github.com/xiaorouji/openwrt-passwall/releases">github地址</a><br>
 luci-19.07_luci-app-passwall_4.78-4_all.ipk、luci-23.05_luci-i18n-passwall-zh-cn_git-24.303.49106-a2215a0_all.ipk 这两个必下，一个软件，一个语言。然后根据自己的架构下载插件压缩包，我们这里下载passwall_packages_ipk_aarch64_cortex-a53.zip。</li>
 <li>安装依赖与passwall2软件<br>
 解压zip把里面所有的ipk上传到路由器/tmp/test，这个目录自建，然后进入/tmp/test执行批量安装命令<code class="notranslate">opkg install *.ipk</code></li>
