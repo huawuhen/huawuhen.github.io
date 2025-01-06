@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Wed, 25 Dec 2024 16:24:30 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>Docker部署youtube bilibili下载转码格式网站</title><link>https://19940816.xyz/post/Docker-bu-shu-youtube%20bilibili-xia-zai-zhuan-ma-ge-shi-wang-zhan.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Mon, 06 Jan 2025 09:20:40 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>小米AX3000T刷openwrt安装passwall</title><link>https://19940816.xyz/post/xiao-mi-AX3000T-shua-openwrt-an-zhuang-passwall.html</link><description># 前言 &#13;
+- 本方法可以变砖的情况下用小米官方工具刷回官方&#13;
+- 所以本方法非u-boot，故需刷的是openwrt原生&#13;
+&#13;
+# 开始&#13;
+## 解锁ssh&#13;
+使用 [xmir patch 工具](https://github.com/openwrt-xiaomi/xmir-patcher) 可一键解锁。</description><guid isPermaLink="true">https://19940816.xyz/post/xiao-mi-AX3000T-shua-openwrt-an-zhuang-passwall.html</guid><pubDate>Mon, 06 Jan 2025 09:20:12 +0000</pubDate></item><item><title>Docker部署youtube bilibili下载转码格式网站</title><link>https://19940816.xyz/post/Docker-bu-shu-youtube%20bilibili-xia-zai-zhuan-ma-ge-shi-wang-zhan.html</link><description># 前言&#13;
 - 本项目目前只支持youtubei bilibili&#13;
 # 部署&#13;
 1. ` docker volume create vol `&#13;
