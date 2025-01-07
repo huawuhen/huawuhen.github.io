@@ -53,9 +53,9 @@ cat /etc/os-release |grep ARCH
 > 返回值 OPENWRT_ARCH="aarch64_cortex-a53"
 2. 下载对应架构的包
 [github地址](https://github.com/xiaorouji/openwrt-passwall/releases)
-luci-19.07_luci-app-passwall_4.78-4_all.ipk、luci-23.05_luci-i18n-passwall-zh-cn_git-24.303.49106-a2215a0_all.ipk 这两个必下，一个软件，一个语言。然后根据自己的架构下载插件压缩包，我们这里下载passwall_packages_ipk_aarch64_cortex-a53.zip。
+luci-23.05_luci-app-passwall_4.78-4_all.ipk、luci-23.05_luci-i18n-passwall-zh-cn_git-24.303.49106-a2215a0_all.ipk 这两个必下,23.05是openwrt的版本，一个软件，一个语言。然后根据自己的架构下载插件压缩包，我们这里下载passwall_packages_ipk_aarch64_cortex-a53.zip。
 3. 安装依赖与passwall2软件
-解压zip把里面所有的ipk上传到路由器/tmp/test，这个目录自建，然后进入/tmp/test执行批量安装命令` opkg install *.ipk `
+解压zip把里面所有的ipk上传到路由器/tmp/test，这个目录自建，然后进入/tmp/test执行批量安装命令` opkg install *.ipk ` 也可以加上强制重新安装参数` --force-reinstall `
 > 如果这个报错是没有划分区，理论不影响插件使用Collected errors:
 > * verify_pkg_installable: Only have 0kb available on filesystem /overlay, pkg v2ray-geosite needs 608
 > * opkg_install_cmd: Cannot install package v2ray-geosite.
