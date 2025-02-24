@@ -11,7 +11,7 @@
     "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
     "style":"<style>#postBody{font-size:20px}</style>",
     "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0107452261760390'   crossorigin='anonymous'></script>",
-    "allhead":"<meta name='google-adsense-account' content='ca-pub-0107452261760390'>",
+    "allhead":"<meta name='google-adsense-account' content='ca-pub-0107452261760390'><script>var _hmt=_hmt||[];(function(){var hm=document.createElement('script');hm.src='https://hm.baidu.com/hm.js?57b96805fa9b089874e8f4aa0a868fcd';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(hm,s);})();</script>",
     "i18n":"CN",
     "UTC":8,
     "needComment":1,
