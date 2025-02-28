@@ -14,6 +14,25 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 # 基本设置
 ## 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
+## 更改SSH默认端口
+通过` bash <(curl -sL kejilion.sh) ` 脚本更改
+## 安装ufw防火墙
+### ufw防火墙基本规则
+```
+# 默认允许所有数据出站
+ufw default allow outgoing
+# 默认禁止所有数据入站
+ufw default deny incoming
+# 允许22端口的tcp协议访问并记录日志，这里建议改成修改后的SSH端口
+ufw allow log 22/tcp
+# 允许443端口访问，没指定协议即包括TCP/UDP
+ufw allow https
+--- 上面即基本设置 新VPS这样设置就可以了 ---
+ufw allow http # 允许80端口，不建议，所有应用使用ssl安全
+# 允许从start_port到end_port的端口
+sudo ufw allow start_port:end_port
+```
+更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
 ` bash <(curl -Lso- https://git.io/kernel.sh) `
 ---
