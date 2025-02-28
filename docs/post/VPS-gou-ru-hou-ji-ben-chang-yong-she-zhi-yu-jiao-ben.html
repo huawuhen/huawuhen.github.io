@@ -10,7 +10,7 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# 第一：脚本
+<meta name="description" content="# VPS测试
 ## 融合怪脚本-首推
 ```
 curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
@@ -23,15 +23,22 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## 解锁测试（第一步选只跨国平台)
 ` bash <(curl -sL Media.Check.Place) `
 
-
-# 设置时区
+# 基本设置
+## 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
-
-# Docker安装
+## bbr加速
+` bash <(curl -Lso- https://git.io/kernel.sh) `
+---
+# 基本软件安装
+## lrzsz字符串传输
+` apt-get install lrzsz -y `
+## HTOP直观的系统状态
+` apt-get install htop -y `
+## Docker安装
 ` curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。">
 <meta property="og:title" content="VPS购入后基本常用设置与脚本">
-<meta property="og:description" content="# 第一：脚本
+<meta property="og:description" content="# VPS测试
 ## 融合怪脚本-首推
 ```
 curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
@@ -44,11 +51,18 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## 解锁测试（第一步选只跨国平台)
 ` bash <(curl -sL Media.Check.Place) `
 
-
-# 设置时区
+# 基本设置
+## 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
-
-# Docker安装
+## bbr加速
+` bash <(curl -Lso- https://git.io/kernel.sh) `
+---
+# 基本软件安装
+## lrzsz字符串传输
+` apt-get install lrzsz -y `
+## HTOP直观的系统状态
+` apt-get install htop -y `
+## Docker安装
 ` curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。">
 <meta property="og:type" content="article">
@@ -121,7 +135,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>第一：脚本</h1>
+<div class="markdown-body" id="postBody"><h1>VPS测试</h1>
 <h2>融合怪脚本-首推</h2>
 <pre class="notranslate"><code class="notranslate">curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh &amp;&amp; chmod +x ecs.sh &amp;&amp; bash ecs.sh -m 1
 </code></pre>
@@ -132,12 +146,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><code class="notranslate">wget -qO- git.io/besttrace | bash</code></p>
 <h2>解锁测试（第一步选只跨国平台)</h2>
 <p><code class="notranslate">bash &lt;(curl -sL Media.Check.Place)</code></p>
-<h1>设置时区</h1>
+<h1>基本设置</h1>
+<h2>设置时区</h2>
 <p><code class="notranslate">timedatectl set-timezone Asia/Shanghai</code></p>
-<h1>Docker安装</h1>
+<h2>bbr加速</h2>
+<h2><code class="notranslate">bash &lt;(curl -Lso- https://git.io/kernel.sh)</code></h2>
+<h1>基本软件安装</h1>
+<h2>lrzsz字符串传输</h2>
+<p><code class="notranslate">apt-get install lrzsz -y</code></p>
+<h2>HTOP直观的系统状态</h2>
+<p><code class="notranslate">apt-get install htop -y</code></p>
+<h2>Docker安装</h2>
 <p><code class="notranslate">curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; sh get-docker.sh</code><br>
 会自动安装 Docker Compose 组件，调用命令是：docker compose。</p>
-<h2>安装docker 管理（国内镜像加速）</h2>
+<h3>安装docker 管理（国内镜像加速）</h3>
 <ol>
 <li>dpanel推荐</li>
 </ol>
@@ -150,10 +172,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>老牌pt<br>
 <code class="notranslate">docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest</code></li>
 </ol>
+<h2>Caddy</h2>
+<p><code class="notranslate">bash &lt;(curl -Ls https://git.19910321.best/installcaddy.sh)</code></p>
 <h1>安装代理</h1>
-<p><code class="notranslate">wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh &amp;&amp; bash tcp-wss.sh</code></p>
-<h1>bbr加速</h1>
-<p><code class="notranslate">bash &lt;(curl -Lso- https://git.io/kernel.sh)</code></p></div>
+<p><code class="notranslate">wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh &amp;&amp; bash tcp-wss.sh</code></p></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>

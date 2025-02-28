@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Thu, 27 Feb 2025 07:32:15 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>快速安装使用入门homebrew包管理工具</title><link>https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</link><description># 简介
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Fri, 28 Feb 2025 09:17:11 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>快速安装使用入门homebrew包管理工具</title><link>https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</link><description># 简介
 1. Homebrew是macOS、Linux下著名的第三方包管理程序，类似ubuntu的apt-get。</description><guid isPermaLink="true">https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</guid><pubDate>Thu, 23 Jan 2025 08:58:11 +0000</pubDate></item><item><title>小米AX3000T刷openwrt安装passwall</title><link>https://19940816.xyz/post/xiao-mi-AX3000T-shua-openwrt-an-zhuang-passwall.html</link><description># 前言 &#13;
 - 本方法可以变砖的情况下用小米官方工具刷回官方&#13;
 - 所以本方法非u-boot，故需刷的是openwrt原生&#13;
@@ -80,7 +80,7 @@ mtd write /tmp/uboot.bin FIP&#13;
 &#13;
 # 刷OP&#13;
 &#13;
-按着RESET通电10秒，电脑配置固定IP：192.168.1.X ,进入192.168.1.1 选择你的固件刷入。</description><guid isPermaLink="true">https://19940816.xyz/post/H3C%20NX30Pro-lu-you-qi-shua-openwrt-jiao-cheng.html</guid><pubDate>Mon, 11 Nov 2024 11:12:49 +0000</pubDate></item><item><title>VPS购入后基本常用设置与脚本</title><link>https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html</link><description># 第一：脚本
+按着RESET通电10秒，电脑配置固定IP：192.168.1.X ,进入192.168.1.1 选择你的固件刷入。</description><guid isPermaLink="true">https://19940816.xyz/post/H3C%20NX30Pro-lu-you-qi-shua-openwrt-jiao-cheng.html</guid><pubDate>Mon, 11 Nov 2024 11:12:49 +0000</pubDate></item><item><title>VPS购入后基本常用设置与脚本</title><link>https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html</link><description># VPS测试
 ## 融合怪脚本-首推
 ```
 curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh &amp;&amp; chmod +x ecs.sh &amp;&amp; bash ecs.sh -m 1
@@ -93,11 +93,18 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh &amp;&amp; 
 ## 解锁测试（第一步选只跨国平台)
 ` bash &lt;(curl -sL Media.Check.Place) `
 
-
-# 设置时区
+# 基本设置
+## 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
-
-# Docker安装
+## bbr加速
+` bash &lt;(curl -Lso- https://git.io/kernel.sh) `
+---
+# 基本软件安装
+## lrzsz字符串传输
+` apt-get install lrzsz -y `
+## HTOP直观的系统状态
+` apt-get install htop -y `
+## Docker安装
 ` curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; sh get-docker.sh `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。</description><guid isPermaLink="true">https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html</guid><pubDate>Mon, 11 Nov 2024 07:34:56 +0000</pubDate></item><item><title>部署hugging face的免费模型</title><link>https://19940816.xyz/post/bu-shu-hugging%20face-de-mian-fei-mo-xing.html</link><description># 前言&#13;
 hugging 有很多暂时免费的模型，以下介绍两种部署方式并转换为兼容openai的api。</description><guid isPermaLink="true">https://19940816.xyz/post/bu-shu-hugging%20face-de-mian-fei-mo-xing.html</guid><pubDate>Tue, 05 Nov 2024 10:59:13 +0000</pubDate></item><item><title>Docker容器管理portainer-ce中文版国内镜像</title><link>https://19940816.xyz/post/Docker-rong-qi-guan-li-portainer-ce-zhong-wen-ban-guo-nei-jing-xiang.html</link><description># 一键，支持x86\arm&#13;

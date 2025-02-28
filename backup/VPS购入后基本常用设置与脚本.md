@@ -1,4 +1,4 @@
-# 第一：脚本
+# VPS测试
 ## 融合怪脚本-首推
 ```
 curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
@@ -11,14 +11,21 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## 解锁测试（第一步选只跨国平台)
 ` bash <(curl -sL Media.Check.Place) `
 
-
-# 设置时区
+# 基本设置
+## 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
-
-# Docker安装
+## bbr加速
+` bash <(curl -Lso- https://git.io/kernel.sh) `
+---
+# 基本软件安装
+## lrzsz字符串传输
+` apt-get install lrzsz -y `
+## HTOP直观的系统状态
+` apt-get install htop -y `
+## Docker安装
 ` curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。
-## 安装docker 管理（国内镜像加速）
+### 安装docker 管理（国内镜像加速）
 1. dpanel推荐
 ```
 docker run -d --name dpanel --restart=always \
@@ -29,8 +36,8 @@ docker run -d --name dpanel --restart=always \
 2. 老牌pt
 ` docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
 
+## Caddy
+` bash <(curl -Ls https://git.19910321.best/installcaddy.sh) `
+
 # 安装代理
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `
-
-# bbr加速
-` bash <(curl -Lso- https://git.io/kernel.sh) `
