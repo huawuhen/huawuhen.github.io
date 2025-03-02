@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Fri, 28 Feb 2025 16:52:22 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>快速安装使用入门homebrew包管理工具</title><link>https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</link><description># 简介
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Sun, 02 Mar 2025 07:50:22 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>快速安装使用入门homebrew包管理工具</title><link>https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</link><description># 简介
 1. Homebrew是macOS、Linux下著名的第三方包管理程序，类似ubuntu的apt-get。</description><guid isPermaLink="true">https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</guid><pubDate>Thu, 23 Jan 2025 08:58:11 +0000</pubDate></item><item><title>小米AX3000T刷openwrt安装passwall</title><link>https://19940816.xyz/post/xiao-mi-AX3000T-shua-openwrt-an-zhuang-passwall.html</link><description># 前言 &#13;
 - 本方法可以变砖的情况下用小米官方工具刷回官方&#13;
 - 所以本方法非u-boot，故需刷的是openwrt原生&#13;
@@ -109,10 +109,15 @@ ufw default deny incoming
 ufw allow log 22/tcp
 # 允许443端口访问，没指定协议即包括TCP/UDP
 ufw allow https
+# 配置规则后重新加载
+ufw reload
 --- 上面即基本设置 新VPS这样设置就可以了 ---
 ufw allow http # 允许80端口，不建议，所有应用使用ssl安全
 # 允许从start_port到end_port的端口
 sudo ufw allow start_port:end_port
+# 仅允许1.1.1.1访问22端口
+ufw allow from 1.1.1.1 to any port 22
+ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ```
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速

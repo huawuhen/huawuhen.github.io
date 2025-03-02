@@ -39,10 +39,15 @@ ufw default deny incoming
 ufw allow log 22/tcp
 # 允许443端口访问，没指定协议即包括TCP/UDP
 ufw allow https
+# 配置规则后重新加载
+ufw reload
 --- 上面即基本设置 新VPS这样设置就可以了 ---
 ufw allow http # 允许80端口，不建议，所有应用使用ssl安全
 # 允许从start_port到end_port的端口
 sudo ufw allow start_port:end_port
+# 仅允许1.1.1.1访问22端口
+ufw allow from 1.1.1.1 to any port 22
+ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ```
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
@@ -86,10 +91,15 @@ ufw default deny incoming
 ufw allow log 22/tcp
 # 允许443端口访问，没指定协议即包括TCP/UDP
 ufw allow https
+# 配置规则后重新加载
+ufw reload
 --- 上面即基本设置 新VPS这样设置就可以了 ---
 ufw allow http # 允许80端口，不建议，所有应用使用ssl安全
 # 允许从start_port到end_port的端口
 sudo ufw allow start_port:end_port
+# 仅允许1.1.1.1访问22端口
+ufw allow from 1.1.1.1 to any port 22
+ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ```
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
@@ -199,10 +209,15 @@ ufw default deny incoming
 ufw allow log 22/tcp
 # 允许443端口访问，没指定协议即包括TCP/UDP
 ufw allow https
+# 配置规则后重新加载
+ufw reload
 --- 上面即基本设置 新VPS这样设置就可以了 ---
 ufw allow http # 允许80端口，不建议，所有应用使用ssl安全
 # 允许从start_port到end_port的端口
 sudo ufw allow start_port:end_port
+# 仅允许1.1.1.1访问22端口
+ufw allow from 1.1.1.1 to any port 22
+ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 </code></pre>
 <p>更多vps安全设置<a href="https://linux.do/t/topic/267502" rel="nofollow">linuxdo服务器安全配置</a></p>
 <h2>bbr加速</h2>
