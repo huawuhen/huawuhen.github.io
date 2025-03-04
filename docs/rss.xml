@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Thu, 23 Jan 2025 08:58:37 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>快速安装使用入门homebrew包管理工具</title><link>https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</link><description># 简介
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Tue, 04 Mar 2025 09:31:10 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>快速安装使用入门homebrew包管理工具</title><link>https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</link><description># 简介
 1. Homebrew是macOS、Linux下著名的第三方包管理程序，类似ubuntu的apt-get。</description><guid isPermaLink="true">https://19940816.xyz/post/kuai-su-an-zhuang-shi-yong-ru-men-homebrew-bao-guan-li-gong-ju.html</guid><pubDate>Thu, 23 Jan 2025 08:58:11 +0000</pubDate></item><item><title>小米AX3000T刷openwrt安装passwall</title><link>https://19940816.xyz/post/xiao-mi-AX3000T-shua-openwrt-an-zhuang-passwall.html</link><description># 前言 &#13;
 - 本方法可以变砖的情况下用小米官方工具刷回官方&#13;
 - 所以本方法非u-boot，故需刷的是openwrt原生&#13;
@@ -80,30 +80,61 @@ mtd write /tmp/uboot.bin FIP&#13;
 &#13;
 # 刷OP&#13;
 &#13;
-按着RESET通电10秒，电脑配置固定IP：192.168.1.X ,进入192.168.1.1 选择你的固件刷入。</description><guid isPermaLink="true">https://19940816.xyz/post/H3C%20NX30Pro-lu-you-qi-shua-openwrt-jiao-cheng.html</guid><pubDate>Mon, 11 Nov 2024 11:12:49 +0000</pubDate></item><item><title>VPS购入后基本常用设置与脚本</title><link>https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html</link><description># 第一：脚本&#13;
-## 融合怪脚本-首推&#13;
-```&#13;
-curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh &amp;&amp; chmod +x ecs.sh &amp;&amp; bash ecs.sh -m 1&#13;
-```&#13;
-## 三网测速&#13;
-` bash &lt;(curl -sL https://raw.githubusercontent.com/i-abc/Speedtest/main/speedtest.sh) `&#13;
-` bash &lt;(curl -Lso- https://www.infski.com/files/superspeed.sh) `&#13;
-## 测速回国路由&#13;
-` wget -qO- git.io/besttrace | bash `&#13;
-## 解锁测试（第一步选只跨国平台)&#13;
-` bash &lt;(curl -sL Media.Check.Place) `&#13;
-&#13;
-&#13;
-# 设置时区&#13;
-` timedatectl set-timezone Asia/Shanghai `&#13;
-&#13;
-# Docker安装&#13;
-` curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; sh get-docker.sh `&#13;
+按着RESET通电10秒，电脑配置固定IP：192.168.1.X ,进入192.168.1.1 选择你的固件刷入。</description><guid isPermaLink="true">https://19940816.xyz/post/H3C%20NX30Pro-lu-you-qi-shua-openwrt-jiao-cheng.html</guid><pubDate>Mon, 11 Nov 2024 11:12:49 +0000</pubDate></item><item><title>VPS购入后基本常用设置与脚本</title><link>https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html</link><description># VPS测试
+## 融合怪脚本-首推
+```
+curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh &amp;&amp; chmod +x ecs.sh &amp;&amp; bash ecs.sh -m 1
+```
+## 三网测速
+` bash &lt;(curl -sL https://raw.githubusercontent.com/i-abc/Speedtest/main/speedtest.sh) `
+` bash &lt;(curl -Lso- https://www.infski.com/files/superspeed.sh) `
+## 测速回国路由
+` wget -qO- git.io/besttrace | bash `
+## 解锁测试（第一步选只跨国平台)
+` bash &lt;(curl -sL Media.Check.Place) `
+
+# 基本设置
+## 设置时区
+` timedatectl set-timezone Asia/Shanghai `
+## 更改SSH默认端口
+通过` bash &lt;(curl -sL kejilion.sh) ` 脚本更改
+## 安装ufw防火墙
+### ufw防火墙基本规则
+```
+# 默认允许所有数据出站
+ufw default allow outgoing
+# 默认禁止所有数据入站
+ufw default deny incoming
+# 允许22端口的tcp协议访问并记录日志，这里建议改成修改后的SSH端口
+ufw allow log 22/tcp
+# 允许443端口访问，没指定协议即包括TCP/UDP
+ufw allow https
+# 配置规则后重新加载
+ufw reload
+--- 上面即基本设置 新VPS这样设置就可以了 ---
+ufw allow http # 允许80端口，不建议，所有应用使用ssl安全
+# 允许从start_port到end_port的端口
+sudo ufw allow start_port:end_port
+# 仅允许1.1.1.1访问22端口
+ufw allow from 1.1.1.1 to any port 22
+ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
+```
+更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
+## bbr加速
+` bash &lt;(curl -Lso- https://git.io/kernel.sh) `
+---
+# 基本软件安装
+## lrzsz字符串传输
+` apt-get install lrzsz -y `
+## HTOP直观的系统状态
+` apt-get install htop -y `
+## Docker安装
+` curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; sh get-docker.sh `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。</description><guid isPermaLink="true">https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html</guid><pubDate>Mon, 11 Nov 2024 07:34:56 +0000</pubDate></item><item><title>部署hugging face的免费模型</title><link>https://19940816.xyz/post/bu-shu-hugging%20face-de-mian-fei-mo-xing.html</link><description># 前言&#13;
-hugging 有很多暂时免费的模型，以下介绍两种部署方式并转换为兼容openai的api。</description><guid isPermaLink="true">https://19940816.xyz/post/bu-shu-hugging%20face-de-mian-fei-mo-xing.html</guid><pubDate>Tue, 05 Nov 2024 10:59:13 +0000</pubDate></item><item><title>Docker容器管理portainer-ce中文版国内镜像</title><link>https://19940816.xyz/post/Docker-rong-qi-guan-li-portainer-ce-zhong-wen-ban-guo-nei-jing-xiang.html</link><description># 一键，支持x86\arm&#13;
-` docker run -d --restart=always --name='portainer' -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `&#13;
-&#13;
-。</description><guid isPermaLink="true">https://19940816.xyz/post/Docker-rong-qi-guan-li-portainer-ce-zhong-wen-ban-guo-nei-jing-xiang.html</guid><pubDate>Mon, 04 Nov 2024 05:54:53 +0000</pubDate></item><item><title>你涉过同一条河-香蝶</title><link>https://19940816.xyz/post/ni-she-guo-tong-yi-tiao-he---xiang-die.html</link><description>&gt; 这是一篇有点年头的文章，当年在我童年时不经意间在一堆旧本杂志看到了这篇文章。</description><guid isPermaLink="true">https://19940816.xyz/post/ni-she-guo-tong-yi-tiao-he---xiang-die.html</guid><pubDate>Mon, 22 Jul 2024 10:03:54 +0000</pubDate></item><item><title>奋不顾身的坠落</title><link>https://19940816.xyz/post/fen-bu-gu-shen-de-zhui-luo.html</link><description>#### 我是一个从不会追女生的人，少年时期至今的恋爱皆一拍即合或表达后就在一起。</description><guid isPermaLink="true">https://19940816.xyz/post/fen-bu-gu-shen-de-zhui-luo.html</guid><pubDate>Wed, 01 May 2024 13:43:03 +0000</pubDate></item><item><title>docker安装mysql与phpmyadmin</title><link>https://19940816.xyz/post/docker-an-zhuang-mysql-yu-phpmyadmin.html</link><description># 准备&#13;
+hugging 有很多暂时免费的模型，以下介绍两种部署方式并转换为兼容openai的api。</description><guid isPermaLink="true">https://19940816.xyz/post/bu-shu-hugging%20face-de-mian-fei-mo-xing.html</guid><pubDate>Tue, 05 Nov 2024 10:59:13 +0000</pubDate></item><item><title>搭建grok-api代理</title><link>https://19940816.xyz/post/da-jian-grok-api-dai-li.html</link><description># 配置grok-api-proxy国内流畅使用x-ai
+
+## 前言
+grok3发布后立刻将deepseek甩在后面，毫无限制、训练数据为最新等特色是国内模型无法可比的。</description><guid isPermaLink="true">https://19940816.xyz/post/da-jian-grok-api-dai-li.html</guid><pubDate>Mon, 04 Nov 2024 05:54:53 +0000</pubDate></item><item><title>你涉过同一条河-香蝶</title><link>https://19940816.xyz/post/ni-she-guo-tong-yi-tiao-he---xiang-die.html</link><description>&gt; 这是一篇有点年头的文章，当年在我童年时不经意间在一堆旧本杂志看到了这篇文章。</description><guid isPermaLink="true">https://19940816.xyz/post/ni-she-guo-tong-yi-tiao-he---xiang-die.html</guid><pubDate>Mon, 22 Jul 2024 10:03:54 +0000</pubDate></item><item><title>奋不顾身的坠落</title><link>https://19940816.xyz/post/fen-bu-gu-shen-de-zhui-luo.html</link><description>#### 我是一个从不会追女生的人，少年时期至今的恋爱皆一拍即合或表达后就在一起。</description><guid isPermaLink="true">https://19940816.xyz/post/fen-bu-gu-shen-de-zhui-luo.html</guid><pubDate>Wed, 01 May 2024 13:43:03 +0000</pubDate></item><item><title>docker安装mysql与phpmyadmin</title><link>https://19940816.xyz/post/docker-an-zhuang-mysql-yu-phpmyadmin.html</link><description># 准备&#13;
 - docker环境&#13;
 # 安装mysql&#13;
 ` docker run --name mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7 `&#13;

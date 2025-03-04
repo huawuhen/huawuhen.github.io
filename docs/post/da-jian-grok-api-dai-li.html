@@ -10,19 +10,19 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# 一键，支持x86\arm
-` docker run -d --restart=always --name='portainer' -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
+<meta name="description" content="# 配置grok-api-proxy国内流畅使用x-ai
 
-。">
-<meta property="og:title" content="Docker容器管理portainer-ce中文版国内镜像">
-<meta property="og:description" content="# 一键，支持x86\arm
-` docker run -d --restart=always --name='portainer' -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
+## 前言
+grok3发布后立刻将deepseek甩在后面，毫无限制、训练数据为最新等特色是国内模型无法可比的。">
+<meta property="og:title" content="搭建grok-api代理">
+<meta property="og:description" content="# 配置grok-api-proxy国内流畅使用x-ai
 
-。">
+## 前言
+grok3发布后立刻将deepseek甩在后面，毫无限制、训练数据为最新等特色是国内模型无法可比的。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://19940816.xyz/post/Docker-rong-qi-guan-li-portainer-ce-zhong-wen-ban-guo-nei-jing-xiang.html">
+<meta property="og:url" content="https://19940816.xyz/post/da-jian-grok-api-dai-li.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/19904710?v=4">
-<title>Docker容器管理portainer-ce中文版国内镜像</title>
+<title>搭建grok-api代理</title>
 
 
 
@@ -55,7 +55,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">Docker容器管理portainer-ce中文版国内镜像</h1>
+<h1 class="postTitle">搭建grok-api代理</h1>
 <div class="title-right">
     <a href="https://19940816.xyz" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -79,8 +79,30 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>一键，支持x86\arm</h1>
-<p><code class="notranslate">docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest</code></p></div>
+<div class="markdown-body" id="postBody"><h1>配置grok-api-proxy国内流畅使用x-ai</h1>
+<h2>前言</h2>
+<p>grok3发布后立刻将deepseek甩在后面，毫无限制、训练数据为最新等特色是国内模型无法可比的。</p>
+<h2>实施</h2>
+<ol>
+<li>克隆此项目，<a href="https://github.com/huawuhen/grok-proxy">https://github.com/huawuhen/grok-proxy</a></li>
+<li>打开<a href="https://dash.deno.com/" rel="nofollow">https://dash.deno.com/</a>,授权github账户。然后项目页点击一键部署如图：<a href="https://imgse.com/i/pEJEdYR" rel="nofollow"><img src="https://camo.githubusercontent.com/d8bf17c5f00e2e7c533ff995cde1ee5a11b1930ab96a33c574c21f8530a19db9/68747470733a2f2f7332312e617831782e636f6d2f323032352f30332f30342f70454a456459522e6a7067" alt="pEJEdYR.jpg" data-canonical-src="https://s21.ax1x.com/2025/03/04/pEJEdYR.jpg" style="max-width: 100%;"></a></li>
+</ol>
+<hr>
+<p>选择你的账户下的grok-proxy项目，构建选择无构建，如图：<a href="https://imgse.com/i/pEJEsOO" rel="nofollow"><img src="https://camo.githubusercontent.com/d3eaa4d971ab1f530c0c5685329392c4f6a1ca0bb30eaf00f4ab50604aa4c09e/68747470733a2f2f7332312e617831782e636f6d2f323032352f30332f30342f70454a45734f4f2e6a7067" alt="pEJEsOO.jpg" data-canonical-src="https://s21.ax1x.com/2025/03/04/pEJEsOO.jpg" style="max-width: 100%;"></a></p>
+<hr>
+<p>入口点，选项目的.ts文件，然后就部署吧。如下图：<a href="https://imgse.com/i/pEJEc0e" rel="nofollow"><img src="https://camo.githubusercontent.com/721ee67da9c6922f52b514ddd6c8ed8eb648cfdc507eaffb7d6f6f65a13783a1/68747470733a2f2f7332312e617831782e636f6d2f323032352f30332f30342f70454a456330652e6a7067" alt="pEJEc0e.jpg" data-canonical-src="https://s21.ax1x.com/2025/03/04/pEJEc0e.jpg" style="max-width: 100%;"></a></p>
+<hr>
+<ol start="3">
+<li>部署完成后，点击自带的免费域名，正常打开反馈如下</li>
+</ol>
+<blockquote>
+<p>Welcome to the xAI API! Documentation is available at <a href="https://docs.x.ai/" rel="nofollow">https://docs.x.ai/</a></p>
+</blockquote>
+<h2>客户端配置</h2>
+<p>api url兼容openai，无论在什么客户端使用最终完整的chat路径应是<strong><a href="https://api.xx.com/v1/chat/completions" rel="nofollow">https://api.xx.com/v1/chat/completions</a></strong><br>
+以cherry studio 为例如图：<br>
+<a href="https://imgse.com/i/pEJEvpq" rel="nofollow"><img src="https://camo.githubusercontent.com/7600c3ecdc53d9164351f4db37bd835e59b33be388a1e78837c348a60a6d62dd/68747470733a2f2f7332312e617831782e636f6d2f323032352f30332f30342f70454a457670712e6a7067" alt="pEJEvpq.jpg" data-canonical-src="https://s21.ax1x.com/2025/03/04/pEJEvpq.jpg" style="max-width: 100%;"></a></p>
+<hr></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>

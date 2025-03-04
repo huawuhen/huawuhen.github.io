@@ -1,4 +1,4 @@
-# 第一：脚本
+# VPS测试
 ## 融合怪脚本-首推
 ```
 curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
@@ -11,103 +11,57 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## 解锁测试（第一步选只跨国平台)
 ` bash <(curl -sL Media.Check.Place) `
 
-
-# 设置时区
+# 基本设置
+## 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
-
-# Docker安装
+## 更改SSH默认端口
+通过` bash <(curl -sL kejilion.sh) ` 脚本更改
+## 安装ufw防火墙
+### ufw防火墙基本规则
+```
+# 默认允许所有数据出站
+ufw default allow outgoing
+# 默认禁止所有数据入站
+ufw default deny incoming
+# 允许22端口的tcp协议访问并记录日志，这里建议改成修改后的SSH端口
+ufw allow log 22/tcp
+# 允许443端口访问，没指定协议即包括TCP/UDP
+ufw allow https
+# 配置规则后重新加载
+ufw reload
+--- 上面即基本设置 新VPS这样设置就可以了 ---
+ufw allow http # 允许80端口，不建议，所有应用使用ssl安全
+# 允许从start_port到end_port的端口
+sudo ufw allow start_port:end_port
+# 仅允许1.1.1.1访问22端口
+ufw allow from 1.1.1.1 to any port 22
+ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
+```
+更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
+## bbr加速
+` bash <(curl -Lso- https://git.io/kernel.sh) `
+---
+# 基本软件安装
+## lrzsz字符串传输
+` apt-get install lrzsz -y `
+## HTOP直观的系统状态
+` apt-get install htop -y `
+## Docker安装
 ` curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。
-## 安装docker pt管理
+### 安装docker 管理（国内镜像加速）
+1. dpanel推荐
+```
+docker run -d --name dpanel --restart=always \
+ -p 8807:8080 -e APP_NAME=dpanel \
+ -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
+ registry.cn-hangzhou.aliyuncs.com/dpanel/dpanel:lite
+```
+2. 老牌pt
 ` docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
+
+## Caddy
+` bash <(curl -Ls https://git.19910321.best/installcaddy.sh) `
 
 # 安装代理
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `
-
-# bbr加速
-` bash <(curl -Lso- https://git.io/kernel.sh) `
-
-# 汇聚一个脚本
-```
-#!/bin/bash
-
-# 一键整备脚本
-
-# 注意：命令里面的汉字部分，需要根据实际替换掉，根据自己的需要来取舍
-
-# 1) 软件更新：建议提前单独执行，可能需要更新内核，重启机器什么的
-
-# 2) 创建脚本：把脚本放到 VPS 上，赋予执行权限并执行。然后后面的步骤就可以完全自动化了
-
-# 3) 安装基础工具
-apt install ufw curl unzip
-
-# 4) 添加新用户
-
-# 添加用户和用户组
-username="wuhen"
-password="passwd"
-useradd -m -s /bin/bash -G sudo "$username"
-
-# 设置用户密码
-echo "$username:$password" | chpasswd
-
-
-# 5) 修改 SSH 登录端口
-
-sed -i '/#Port 22/a Port 22\nPort 端口号' /etc/ssh/sshd_config
-
-# 重启 sshd
-systemctl restart sshd
-
-
-# 6) shh 免密连 vps
-
-public_key="本地公钥"
-
-# 生成服务器用户的公钥和私钥
-ssh-keygen
-
-# 写入本地的私钥到文件
-cat <<EOF > /当前用户目录/.ssh/authorized_keys
-$public_key
-EOF
-
-# 重启 sshd
-chmod 600 /当前用户目录/.ssh/authorized_keys
-systemctl restart sshd
-
-
-# 7) 限制 root 用户用用密码登录（如果有设置 shh 免密登录的话）
-
-# 使用 sed 替换文件中的内容
-file="/etc/ssh/sshd_config"
-search="PermitRootLogin yes"
-replace="PermitRootLogin without-password"
-sed -i "s/$search/$replace/" "$file"
-
-# 重启 sshd
-chmod 700 /当前用户目录/.ssh
-systemctl restart sshd
-
-
-# 8) 设置防火墙
-
-# 开端口
-ufw allow ssh
-ufw allow 22
-ufw allow 端口号
-
-# 启用防火墙
-ufw enable
-
-
-# 9) 设置时区
-timedatectl set-timezone 时区
-
-
-# 10) 配置 BBR 加速
-echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-sysctl -p
-```
