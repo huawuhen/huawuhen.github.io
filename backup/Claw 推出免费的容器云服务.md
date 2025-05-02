@@ -7,7 +7,7 @@ claw是一家云服务器商，大概是看到cf准备今年8月提供免费容�
 - 10G流量
 ## 注册
 
-地址： [https://console.run.claw.cloud/signin](https://console.run.claw.cloud/signin?link=JK21SfnfqK)
+地址： [https://console.run.claw.cloud/signin?link=EN09SD9KUFI7](https://console.run.claw.cloud/signin?link=EN09SD9KUFI7)
 使用此链接注册每月赠送5usd，用来消耗免费套餐的量。
 
 [![pEf1LDO.jpg](https://s21.ax1x.com/2025/04/15/pEf1LDO.jpg)](https://imgse.com/i/pEf1LDO)
