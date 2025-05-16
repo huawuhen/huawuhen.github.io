@@ -34,3 +34,12 @@ docker run -d --restart always \
 
 ## 参考
 [https://ohttps.com/docs/cloud/synology/nas](https://ohttps.com/docs/cloud/synology/nas)
+
+---
+
+## ssh方式部署
+ohttps支持ssh链接部署，此方式可用于vps，云服务器。
+毕竟简单大致说下重点；
+创建部署节点-ssh-用户名即vps的我这里选择root - 主机地址 -- 端口号即ssh端口默认22 -- 链接方式根据实际情况，我这里选择密码 -- 密码即root用户密码 -- 前置命令：这里要用cd命令进入一个文件夹用来存放ohttps自动生成的证书，前置命令走完后，ohttps会自动创建一个证书ID命名的文件夹并在文件夹里写入证书文件。 -- 后置命令即最后需要执行的命令 可以写 nginx -s reload 也可留空 。
+
+最后记得修改conf配置里的证书位置。
