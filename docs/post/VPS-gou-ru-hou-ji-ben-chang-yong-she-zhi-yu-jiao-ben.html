@@ -237,7 +237,7 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 <pre class="notranslate"><code class="notranslate">docker run -d --name dpanel --restart=always \
  -p 8807:8080 -e APP_NAME=dpanel \
  -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
- registry.cn-hangzhou.aliyuncs.com/dpanel/dpanel:lite
+ dpanel/dpanel:lite
 </code></pre>
 <ol start="2">
 <li>老牌pt<br>

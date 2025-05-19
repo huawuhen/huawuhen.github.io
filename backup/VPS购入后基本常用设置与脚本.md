@@ -55,7 +55,7 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 docker run -d --name dpanel --restart=always \
  -p 8807:8080 -e APP_NAME=dpanel \
  -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
- registry.cn-hangzhou.aliyuncs.com/dpanel/dpanel:lite
+ dpanel/dpanel:lite
 ```
 2. 老牌pt
 ` docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
