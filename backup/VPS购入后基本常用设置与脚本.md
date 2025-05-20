@@ -61,7 +61,7 @@ docker run -d --name dpanel --restart=always \
 ` docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
 
 ## Caddy
-` bash <(curl -Ls https://git.19910321.best/installcaddy.sh) `
+` bash <(curl -Ls https://git.huawuhen.site/installcaddy.sh) `
 
 # 安装代理
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `
