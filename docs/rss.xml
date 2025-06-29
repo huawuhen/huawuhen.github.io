@@ -1,5 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Sun, 18 May 2025 08:31:07 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>openres-manager丝滑简单的nginx反向代理管理器</title><link>https://19940816.xyz/post/openres-manager-si-hua-jian-dan-de-nginx-fan-xiang-dai-li-guan-li-qi.html</link><description>&gt; openres-manager丝滑简单的nginx反向代理管理器
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Sun, 29 Jun 2025 13:40:10 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>香港haha卡购买使用最新攻略</title><link>https://19940816.xyz/post/xiang-gang-haha-qia-gou-mai-shi-yong-zui-xin-gong-lve.html</link><description>&gt;香港haha卡购买使用最新攻略
+
+# 套餐介绍
+- 初始余额50HKD
+- 月租：无月租，自由选择漫游套餐（就是购买套餐消费，消费一次套餐延迟1年，超过1年未消费自动注销）
+- 每日套餐：10 HKD/天，包含500M高速流量
+- 每月套餐：138 HKD/月，包含15GB高速流量
+高速流量用完后：可继续使用无限低速流量
+
+---
+大陆漫游资费：
+- 收短信：免费
+- 发短信：3.5 HKD/条
+- 接听来电：8 HKD/分钟
+- 拨打香港号码：8 HKD/分钟
+- 拨打大陆号码：6 HKD/分钟
+- 拨打其他国家或地区：25 HKD/分钟
+- 使用流量：无套餐外扣费
+
+# 获取号码
+## 购买
+香港丰泽购买实体卡；咸鱼找代购；卡商贩子；此卡原价50HKD。</description><guid isPermaLink="true">https://19940816.xyz/post/xiang-gang-haha-qia-gou-mai-shi-yong-zui-xin-gong-lve.html</guid><pubDate>Sun, 29 Jun 2025 13:39:42 +0000</pubDate></item><item><title>openres-manager丝滑简单的nginx反向代理管理器</title><link>https://19940816.xyz/post/openres-manager-si-hua-jian-dan-de-nginx-fan-xiang-dai-li-guan-li-qi.html</link><description>&gt; openres-manager丝滑简单的nginx反向代理管理器
 
 # 前言
 
