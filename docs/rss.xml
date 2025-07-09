@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Sun, 29 Jun 2025 13:40:10 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>香港haha卡购买使用最新攻略</title><link>https://19940816.xyz/post/xiang-gang-haha-qia-gou-mai-shi-yong-zui-xin-gong-lve.html</link><description>&gt;香港haha卡购买使用最新攻略
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Wed, 09 Jul 2025 06:49:52 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>Gemini API 反向代理部署</title><link>https://19940816.xyz/post/Gemini%20API%20-fan-xiang-dai-li-bu-shu.html</link><description># 💫 Gemini API 反向代理部署
+
+&gt; 🤔 gemini每个模型都有每日免费的API使用量
+&gt; 
+&gt; 📝 但是默认api url国内无法访问
+&gt; 
+&gt; 🔍 下面介绍几个反代方式，让国内流程使用api
+
+# claw cloud 部署
+使用到的项目：[https://github.com/wyeeeee/hajimi](https://github.com/wyeeeee/hajimi)
+claw免费提供每月5USD的额度。</description><guid isPermaLink="true">https://19940816.xyz/post/Gemini%20API%20-fan-xiang-dai-li-bu-shu.html</guid><pubDate>Wed, 09 Jul 2025 06:49:20 +0000</pubDate></item><item><title>香港haha卡购买使用最新攻略</title><link>https://19940816.xyz/post/xiang-gang-haha-qia-gou-mai-shi-yong-zui-xin-gong-lve.html</link><description>&gt;香港haha卡购买使用最新攻略
 
 # 套餐介绍
 - 初始余额50HKD
