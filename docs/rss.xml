@@ -1,5 +1,58 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Mon, 29 Sep 2025 12:35:26 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>locyanfrp内网穿透docker教程</title><link>https://19940816.xyz/post/locyanfrp-nei-wang-chuan-tou-docker-jiao-cheng.html</link><description># locyanfrp内网穿透docker教程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Mon, 06 Oct 2025 10:20:57 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker部署基于discord的免费图床</title><link>https://19940816.xyz/post/docker-bu-shu-ji-yu-discord-de-mian-fei-tu-chuang.html</link><description># docker部署基于discord的免费图床
+## 前言
+- 基于discord频道无限容量
+- 支持多种格式图片、视频、音频
+## 部署
+### 准备
+- discord创建频道获取到ID
+- 创建机器人获取token
+- 机器人加入创建的频道
+- 上面不会百度discord+coze
+
+## docekr
+创建个目录，新建yml文件
+```
+services:
+  discord-image:
+    image: ghcr.io/missuo/discord-image
+    ports:
+      - '8080:8080'
+    environment:
+      - BOT_TOKEN=MTIyMTM3NDMxxxxxxxxxxJSTiZo6dAJlNcxSg1ql8BOutdo5_-Wo9t3I
+      - CHANNEL_ID=1156xxxxxxx42
+      - UPLOAD_DIR=/app/uploads
+      #- PROXY_URL=your_proxy_url # If you want to access in mainland China, you must set this item.
+      - AUTO_DELETE=true
+    volumes:
+      - ./uploads:/app/uploads
+	  
+```
+启动后，`IP：8080`测试打开
+## edgeone回源配置
+&gt; 这里我为了方便直接用了腾讯海外版的CDN回源访问，没有配置nginx也不用申请ssl，当然下面也给了nginx配置参考
+
+- 源站配置：你的vps-ip
+- 回源协议:http
+- 回源端口：服务访问的端口，本教程是8080
+![CDN配置](https://wp-cdn.4ce.cn/v2/hEJb0sy.jpeg)
+- 配置ssl
+![edgeone-ssl配置](https://wp-cdn.4ce.cn/v2/0wXweDY.jpeg)
+
+## nginx配置
+```
+location / {
+    proxy_pass http://localhost:8080;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header REMOTE-HOST $remote_addr;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_http_version 1.1;
+} 
+```
+。</description><guid isPermaLink="true">https://19940816.xyz/post/docker-bu-shu-ji-yu-discord-de-mian-fei-tu-chuang.html</guid><pubDate>Mon, 06 Oct 2025 10:20:24 +0000</pubDate></item><item><title>locyanfrp内网穿透docker教程</title><link>https://19940816.xyz/post/locyanfrp-nei-wang-chuan-tou-docker-jiao-cheng.html</link><description># locyanfrp内网穿透docker教程
 ## 前言
 locyanfrp是一个免费内网穿透平台，相比目前存在的免费平台，locyanfrp签到赠送的流量更大，功能限制更小。</description><guid isPermaLink="true">https://19940816.xyz/post/locyanfrp-nei-wang-chuan-tou-docker-jiao-cheng.html</guid><pubDate>Mon, 29 Sep 2025 12:34:19 +0000</pubDate></item><item><title>docker部署lunaTV免费在线影视站</title><link>https://19940816.xyz/post/docker-bu-shu-lunaTV-mian-fei-zai-xian-ying-shi-zhan.html</link><description># docker部署lunaTV免费在线影视站
 # 前言
