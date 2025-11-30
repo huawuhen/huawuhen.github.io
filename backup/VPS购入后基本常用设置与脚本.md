@@ -17,6 +17,7 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## 更改SSH默认端口
 通过` bash <(curl -sL kejilion.sh) ` 脚本更改
 ## 安装ufw防火墙
+`apt install ufw -y`
 ### ufw防火墙基本规则
 ```
 # 默认允许所有数据出站
@@ -57,11 +58,19 @@ docker run -d --name dpanel --restart=always \
  -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
  dpanel/dpanel:lite
 ```
+国内安装
+```
+docker run -d --name dpanel --restart=always \
+ -p 8807:8080 -e APP_NAME=dpanel \
+ -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
+ dpanel/dpanel:lite
+```
 2. 老牌pt
 ` docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
 
-## Caddy
-` bash <(curl -Ls https://git.huawuhen.site/installcaddy.sh) `
+## Caddy 安装
+` bash <(curl -Ls https://git.huawuhen.online/installcaddy.sh) `
 
 # 安装代理
+1. 推荐Reality
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `

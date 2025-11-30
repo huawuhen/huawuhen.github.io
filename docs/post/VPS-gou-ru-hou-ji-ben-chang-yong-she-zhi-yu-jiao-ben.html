@@ -26,6 +26,7 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## 更改SSH默认端口
 通过` bash <(curl -sL kejilion.sh) ` 脚本更改
 ## 安装ufw防火墙
+`apt install ufw -y`
 ### ufw防火墙基本规则
 ```
 # 默认允许所有数据出站
@@ -78,6 +79,7 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## 更改SSH默认端口
 通过` bash <(curl -sL kejilion.sh) ` 脚本更改
 ## 安装ufw防火墙
+`apt install ufw -y`
 ### ufw防火墙基本规则
 ```
 # 默认允许所有数据出站
@@ -197,6 +199,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>更改SSH默认端口</h2>
 <p>通过<code class="notranslate">bash &lt;(curl -sL kejilion.sh)</code> 脚本更改</p>
 <h2>安装ufw防火墙</h2>
+<p><code class="notranslate">apt install ufw -y</code></p>
 <h3>ufw防火墙基本规则</h3>
 <pre class="notranslate"><code class="notranslate"># 默认允许所有数据出站
 ufw default allow outgoing
@@ -236,14 +239,23 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
  -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
  dpanel/dpanel:lite
 </code></pre>
+<p>国内安装</p>
+<pre class="notranslate"><code class="notranslate">docker run -d --name dpanel --restart=always \
+ -p 8807:8080 -e APP_NAME=dpanel \
+ -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
+ dpanel/dpanel:lite
+</code></pre>
 <ol start="2">
 <li>老牌pt<br>
 <code class="notranslate">docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest</code></li>
 </ol>
-<h2>Caddy</h2>
-<p><code class="notranslate">bash &lt;(curl -Ls https://git.huawuhen.site/installcaddy.sh)</code></p>
+<h2>Caddy 安装</h2>
+<p><code class="notranslate">bash &lt;(curl -Ls https://git.huawuhen.online/installcaddy.sh)</code></p>
 <h1>安装代理</h1>
-<p><code class="notranslate">wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh &amp;&amp; bash tcp-wss.sh</code></p></div>
+<ol>
+<li>推荐Reality<br>
+<code class="notranslate">wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh &amp;&amp; bash tcp-wss.sh</code></li>
+</ol></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
