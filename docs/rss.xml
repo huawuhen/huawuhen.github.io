@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Thu, 04 Dec 2025 10:32:34 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>ipv6 vps 服务器基本使用教程与搭建节点</title><link>https://19940816.xyz/post/ipv6%20vps%20-fu-wu-qi-ji-ben-shi-yong-jiao-cheng-yu-da-jian-jie-dian.html</link><description># ipv6 vps 服务器基本使用教程与搭建vmess+ws+cdn节点
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Wed, 10 Dec 2025 06:19:39 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>ipv6 vps 服务器基本使用教程与搭建节点</title><link>https://19940816.xyz/post/ipv6%20vps%20-fu-wu-qi-ji-ben-shi-yong-jiao-cheng-yu-da-jian-jie-dian.html</link><description># ipv6 vps 服务器基本使用教程与搭建vmess+ws+cdn节点
 
 ## 前提
 你的网络要支持ipv6，不然ssh都链接不上，现在家用宽带都支持了，如果没开启请自行谷歌
@@ -347,6 +347,15 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
 ` bash &lt;(curl -Lso- https://git.io/kernel.sh) `
+
+## bash美化
+在root目录下以root账户运行
+`git clone https://github.com/ohmybash/oh-my-bash.git ~/.oh-my-bash &amp;&amp; cp ~/.oh-my-bash/templates/bashrc.osh-template ~/.bashrc &amp;&amp; source ~/.bashrc`
+
+&gt; 卸载
+&gt; `~/uninstall_oh_my_bash`
+
+
 ---
 # 基本软件安装
 ## lrzsz字符串传输

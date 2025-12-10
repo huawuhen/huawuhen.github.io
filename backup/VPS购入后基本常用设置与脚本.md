@@ -41,6 +41,15 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
 ` bash <(curl -Lso- https://git.io/kernel.sh) `
+
+## bash美化
+在root目录下以root账户运行
+`git clone https://github.com/ohmybash/oh-my-bash.git ~/.oh-my-bash && cp ~/.oh-my-bash/templates/bashrc.osh-template ~/.bashrc && source ~/.bashrc`
+
+> 卸载
+> `~/uninstall_oh_my_bash`
+
+
 ---
 # 基本软件安装
 ## lrzsz字符串传输
@@ -74,3 +83,7 @@ docker run -d --name dpanel --restart=always \
 # 安装代理
 1. 推荐Reality
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `
+
+2. 八合一
+[https://github.com/mack-a/v2ray-agent](https://github.com/mack-a/v2ray-agent)
+
