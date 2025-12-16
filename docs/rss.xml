@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Tue, 16 Dec 2025 12:25:43 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>一键安装带白名单管理的mtporxy</title><link>https://19940816.xyz/post/yi-jian-an-zhuang-dai-bai-ming-dan-guan-li-de-mtporxy.html</link><description># 介绍
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Tue, 16 Dec 2025 12:37:07 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>一键安装带白名单管理的mtporxy</title><link>https://19940816.xyz/post/yi-jian-an-zhuang-dai-bai-ming-dan-guan-li-de-mtporxy.html</link><description># 介绍
 https://github.com/Usagi537233/mtg-whitelist
 一键安装Mtproxy&amp;白名单管理系统，mtproxy协议早已被gfw针对检测，没有国内中转情况下很快会被封掉，但经过网友测试在防火墙白名单下很少被封。</description><guid isPermaLink="true">https://19940816.xyz/post/yi-jian-an-zhuang-dai-bai-ming-dan-guan-li-de-mtporxy.html</guid><pubDate>Thu, 11 Dec 2025 13:06:31 +0000</pubDate></item><item><title>ipv6 vps 服务器基本使用教程与搭建节点</title><link>https://19940816.xyz/post/ipv6%20vps%20-fu-wu-qi-ji-ben-shi-yong-jiao-cheng-yu-da-jian-jie-dian.html</link><description># ipv6 vps 服务器基本使用教程与搭建vmess+ws+cdn节点
 
@@ -348,7 +348,7 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ```
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
-` curl -fsSoL https://git.io/kernel.sh -o bbr.sh &amp;&amp; bash bbr.sh `
+` curl -Lso install.sh https://git.io/kernel.sh  &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh `
 
 ## bash美化
 在root目录下以root账户运行
