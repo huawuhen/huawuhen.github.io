@@ -27,7 +27,7 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 通过` bash <(curl -sL kejilion.sh) ` 脚本更改
 ## 安装ufw防火墙
 `apt install ufw -y`
-### ufw防火墙基本规则
+**ufw防火墙基本规则**
 ```
 # 默认允许所有数据出站
 ufw default allow outgoing
@@ -49,7 +49,7 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ```
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
-` bash <(curl -Lso- https://git.io/kernel.sh) `
+` curl -fsSoL https://git.io/kernel.sh -o bbr.sh && bash bbr.sh `
 
 ## bash美化
 在root目录下以root账户运行
@@ -61,12 +61,10 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 
 ---
 # 基本软件安装
-## lrzsz字符串传输
-` apt-get install lrzsz -y `
-## HTOP直观的系统状态
-` apt-get install htop -y `
+## lrzsz\htop
+` apt-get install lrzsz -y && apt-get install htop -y `
 ## Docker安装
-` curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh `
+` curl -fsSL https://get.docker.com  | sh - `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。">
 <meta property="og:title" content="VPS购入后基本常用设置与脚本">
 <meta property="og:description" content="# VPS测试
@@ -89,7 +87,7 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 通过` bash <(curl -sL kejilion.sh) ` 脚本更改
 ## 安装ufw防火墙
 `apt install ufw -y`
-### ufw防火墙基本规则
+**ufw防火墙基本规则**
 ```
 # 默认允许所有数据出站
 ufw default allow outgoing
@@ -111,7 +109,7 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ```
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
-` bash <(curl -Lso- https://git.io/kernel.sh) `
+` curl -fsSoL https://git.io/kernel.sh -o bbr.sh && bash bbr.sh `
 
 ## bash美化
 在root目录下以root账户运行
@@ -123,12 +121,10 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 
 ---
 # 基本软件安装
-## lrzsz字符串传输
-` apt-get install lrzsz -y `
-## HTOP直观的系统状态
-` apt-get install htop -y `
+## lrzsz\htop
+` apt-get install lrzsz -y && apt-get install htop -y `
 ## Docker安装
-` curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh `
+` curl -fsSL https://get.docker.com  | sh - `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html">
@@ -217,8 +213,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>更改SSH默认端口</h2>
 <p>通过<code class="notranslate">bash &lt;(curl -sL kejilion.sh)</code> 脚本更改</p>
 <h2>安装ufw防火墙</h2>
-<p><code class="notranslate">apt install ufw -y</code></p>
-<h3>ufw防火墙基本规则</h3>
+<p><code class="notranslate">apt install ufw -y</code><br>
+<strong>ufw防火墙基本规则</strong></p>
 <pre class="notranslate"><code class="notranslate"># 默认允许所有数据出站
 ufw default allow outgoing
 # 默认禁止所有数据入站
@@ -239,7 +235,7 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 </code></pre>
 <p>更多vps安全设置<a href="https://linux.do/t/topic/267502" rel="nofollow">linuxdo服务器安全配置</a></p>
 <h2>bbr加速</h2>
-<p><code class="notranslate">bash &lt;(curl -Lso- https://git.io/kernel.sh)</code></p>
+<p><code class="notranslate">curl -fsSoL https://git.io/kernel.sh -o bbr.sh &amp;&amp; bash bbr.sh</code></p>
 <h2>bash美化</h2>
 <p>在root目录下以root账户运行<br>
 <code class="notranslate">git clone https://github.com/ohmybash/oh-my-bash.git ~/.oh-my-bash &amp;&amp; cp ~/.oh-my-bash/templates/bashrc.osh-template ~/.bashrc &amp;&amp; source ~/.bashrc</code></p>
@@ -249,12 +245,10 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 </blockquote>
 <hr>
 <h1>基本软件安装</h1>
-<h2>lrzsz字符串传输</h2>
-<p><code class="notranslate">apt-get install lrzsz -y</code></p>
-<h2>HTOP直观的系统状态</h2>
-<p><code class="notranslate">apt-get install htop -y</code></p>
+<h2>lrzsz\htop</h2>
+<p><code class="notranslate">apt-get install lrzsz -y &amp;&amp; apt-get install htop -y</code></p>
 <h2>Docker安装</h2>
-<p><code class="notranslate">curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; sh get-docker.sh</code><br>
+<p><code class="notranslate">curl -fsSL https://get.docker.com  | sh -</code><br>
 会自动安装 Docker Compose 组件，调用命令是：docker compose。</p>
 <h3>安装docker 管理（国内镜像加速）</h3>
 <ol>
@@ -281,7 +275,8 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 <ol>
 <li>
 <p>推荐Reality<br>
-<code class="notranslate">wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh &amp;&amp; bash tcp-wss.sh</code></p>
+<code class="notranslate">wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh &amp;&amp; bash tcp-wss.sh</code><br>
+<a href="https://bulianglin.com/archives/nicename.html" rel="nofollow">reality目标域名</a></p>
 </li>
 <li>
 <p>八合一<br>

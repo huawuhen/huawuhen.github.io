@@ -18,7 +18,7 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 通过` bash <(curl -sL kejilion.sh) ` 脚本更改
 ## 安装ufw防火墙
 `apt install ufw -y`
-### ufw防火墙基本规则
+**ufw防火墙基本规则**
 ```
 # 默认允许所有数据出站
 ufw default allow outgoing
@@ -40,7 +40,7 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ```
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 ## bbr加速
-` bash <(curl -Lso- https://git.io/kernel.sh) `
+` curl -fsSoL https://git.io/kernel.sh -o bbr.sh && bash bbr.sh `
 
 ## bash美化
 在root目录下以root账户运行
@@ -52,12 +52,10 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 
 ---
 # 基本软件安装
-## lrzsz字符串传输
-` apt-get install lrzsz -y `
-## HTOP直观的系统状态
-` apt-get install htop -y `
+## lrzsz\htop
+` apt-get install lrzsz -y && apt-get install htop -y `
 ## Docker安装
-` curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh `
+` curl -fsSL https://get.docker.com  | sh - `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。
 ### 安装docker 管理（国内镜像加速）
 1. dpanel推荐
@@ -83,6 +81,7 @@ docker run -d --name dpanel --restart=always \
 # 安装代理
 1. 推荐Reality
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `
+[reality目标域名](https://bulianglin.com/archives/nicename.html)
 
 2. 八合一
 [https://github.com/mack-a/v2ray-agent](https://github.com/mack-a/v2ray-agent)
