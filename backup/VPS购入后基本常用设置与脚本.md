@@ -14,7 +14,9 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 # 基本设置
 ## 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
-## 更改SSH默认端口
+## bbr加速
+` curl -Lso install.sh https://git.io/kernel.sh  && chmod +x install.sh && ./install.sh `
+## 强烈更改SSH默认端口
 通过` bash <(curl -sL kejilion.sh) ` 脚本更改
 ## 安装ufw防火墙
 `apt install ufw -y`
@@ -38,9 +40,11 @@ sudo ufw allow start_port:end_port
 ufw allow from 1.1.1.1 to any port 22
 ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ```
+## 安装fail2ban
+`wget https://raw.githubusercontent.com/huawuhen/Fail2ban/refs/heads/master/fail2ban.sh && chmod +x fail2ban.sh && bash fail2ban.sh`
+
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
-## bbr加速
-` curl -Lso install.sh https://git.io/kernel.sh  && chmod +x install.sh && ./install.sh `
+
 
 ## bash美化
 在root目录下以root账户运行
