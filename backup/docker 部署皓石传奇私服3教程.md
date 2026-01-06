@@ -1,7 +1,8 @@
 # docker 部署皓石传奇
 
 ## 项目
-https://gitee.com/raphaelcheung/zircon-legend-server
+https://github.com/[raphaelcheung/zircon-legend-server](https://github.com/raphaelcheung/zircon-legend-server)
+https://hub.docker.com/r/livse/zirconlegend
 
 # 服务端部署
 
@@ -10,32 +11,65 @@ https://gitee.com/raphaelcheung/zircon-legend-server
 # 创建自定义网络名称为chuanqi并指定子网
 docker network create --subnet=172.99.0.0/16 chuanqi
 ```
+## 创建docker-compose.yml
 ```
 version: "3.8"  
 services:
   zircon:  # 服务名
     container_name: zircon  # 容器名
-    image: raphzhang/zirconlegend:latest  # 镜像
+    image: livse/zirconlegend:latest  # 镜像
     networks:  # 网络配置
       chuanqi:  # 网络名称
         ipv4_address: "172.99.0.9"  # 指定固定 IP
     ports:  # 端口映射
       - "17000:7000"  # 端口
+      - "17080:7080"  # 管理端口
     restart: unless-stopped  # 重启策略
     user: "0:0"  # root用户
     volumes:  # 路径映射
       - ./datas:/zircon/datas  # 数据持久化
       - /etc/localtime:/etc/localtime:ro  # 时间同步
       - /etc/timezone:/etc/timezone:ro  # 时区同步
+    environment:
+      - TZ=Asia/Shanghai # 可选：显式设置时区
 networks:  # 网络定义
   chuanqi:  # 网络名称
     external: true  # 声明为外部网络
 ```
 - datas:服务端数据需提前上传好；
 
+---
+
+## nginx反向代理
+如果你设置了Nginx反向代理游戏流量从而导致游戏服务器获取不到真实客户端 IP。你需要在Nginx上开启proxy_protocol，同时打开服务器的配置项：
+```
+[Network]
+UseProxy=True
+```
+这样服务器就能获取到转发流量的真实 IP 地址，下面是一个正确的反代配置举例：
+```
+server {
+    listen 80 proxy_protocol;
+    server_name mir3.xxx.com;
+
+    # 其他配置...
+
+    location / {
+        proxy_pass http://127.0.0.1:17000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Proxy $proxy_protocol_addr;
+    }
+}
+
+```
+
+
 运行正常日志：
 > 皓石传奇三 v1.13.0.36433
-免费开源的传奇三，开源技术交流进QQ群 915941142
+免费开源的传奇三，开源技术交流
 客户端更新路径：
 地图文件路径：./datas/Map/
 最大连接数量限制：200
@@ -75,3 +109,5 @@ Port=17000
 通过网盘分享的文件：游戏攻略.rar
 链接: https://pan.baidu.com/s/1-3Hr7NEZGfO_fscdRL8tUQ 提取码: 6dqy
 
+## GM命令
+https://github.com/raphaelcheung/zircon-legend-server/blob/main/GM%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md

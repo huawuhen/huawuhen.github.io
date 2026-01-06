@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Tue, 30 Dec 2025 11:56:10 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker 部署奇迹openMU服务端与中文客户端</title><link>https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Tue, 06 Jan 2026 12:09:20 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker 部署奇迹openMU服务端与中文客户端</title><link>https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html</link><description>
 # 部署服务端
 
 ## 前提
@@ -98,7 +98,8 @@ https://nat64.net/public-providers
 此刻你会发现自己终于可以正常脚本了，先跑个sui搭个节点。</description><guid isPermaLink="true">https://19940816.xyz/post/ipv6%20vps%20-fu-wu-qi-ji-ben-shi-yong-jiao-cheng-yu-da-jian-jie-dian.html</guid><pubDate>Wed, 03 Dec 2025 13:22:23 +0000</pubDate></item><item><title>docker 部署皓石传奇私服3教程</title><link>https://19940816.xyz/post/docker%20-bu-shu-hao-shi-chuan-qi-si-fu-3-jiao-cheng.html</link><description># docker 部署皓石传奇
 
 ## 项目
-https://gitee.com/raphaelcheung/zircon-legend-server
+https://github.com/[raphaelcheung/zircon-legend-server](https://github.com/raphaelcheung/zircon-legend-server)
+https://hub.docker.com/r/livse/zirconlegend
 
 # 服务端部署
 
@@ -107,72 +108,37 @@ https://gitee.com/raphaelcheung/zircon-legend-server
 # 创建自定义网络名称为chuanqi并指定子网
 docker network create --subnet=172.99.0.0/16 chuanqi
 ```
+## 创建docker-compose.yml
 ```
 version: '3.8'  
 services:
   zircon:  # 服务名
     container_name: zircon  # 容器名
-    image: raphzhang/zirconlegend:latest  # 镜像
+    image: livse/zirconlegend:latest  # 镜像
     networks:  # 网络配置
       chuanqi:  # 网络名称
         ipv4_address: '172.99.0.9'  # 指定固定 IP
     ports:  # 端口映射
       - '17000:7000'  # 端口
+      - '17080:7080'  # 管理端口
     restart: unless-stopped  # 重启策略
     user: '0:0'  # root用户
     volumes:  # 路径映射
       - ./datas:/zircon/datas  # 数据持久化
       - /etc/localtime:/etc/localtime:ro  # 时间同步
       - /etc/timezone:/etc/timezone:ro  # 时区同步
+    environment:
+      - TZ=Asia/Shanghai # 可选：显式设置时区
 networks:  # 网络定义
   chuanqi:  # 网络名称
     external: true  # 声明为外部网络
 ```
 - datas:服务端数据需提前上传好；
 
-运行正常日志：
-&gt; 皓石传奇三 v1.13.0.36433
-免费开源的传奇三，开源技术交流进QQ群 915941142
-客户端更新路径：
-地图文件路径：./datas/Map/
-最大连接数量限制：200
-&gt;[2025-11-21 22:00:17]: 网络已启动.
-&gt;[2025-11-21 22:00:17]: Web 服务已启动.
-&gt;[2025-11-21 22:00:17]: 幽灵船通向地图：神舰入口
-&gt;[2025-11-21 22:00:17]: 地狱之门通向地图：赤龙城入口
-&gt;[2025-11-21 22:00:17]: 加载耗时: 18 秒
-&gt;[2025-11-21 22:00:17]: 共清理 0 条数据
-&gt;[2025-11-21 22:00:26]: 自动清理用户垃圾数据：共清理 0 条
+---
 
-# 客户端
-下载客户端
-解压修改Legend.ini的你的服务器ip和端口
-```
-[Network]
-IPAddress=x.x.x.x
-Port=17000
-```
-运行**Legend.exe**，注意运行前安装客户端依赖
-
-# 下载
-
-## 服务端运行数据
-通过网盘分享的文件：服务器运行文件-20250207.rar
-链接: https://pan.baidu.com/s/1YrnZ4RDSyqRoWNVMPR6OVw 提取码: y5u8
-
-## 客户端
-通过网盘分享的文件：传奇客户端.rar
-链接: https://pan.baidu.com/s/1mQahhiwGNNP1o9YE9c_Whg 提取码: wixg
-
-## 客户端运行依赖
-通过网盘分享的文件：客户端运行依赖.zip
-链接: https://pan.baidu.com/s/1YNgpmjBZunpAfhyoYN5YKg 提取码: dzj4
-
-## 游戏攻略
-通过网盘分享的文件：游戏攻略.rar
-链接: https://pan.baidu.com/s/1-3Hr7NEZGfO_fscdRL8tUQ 提取码: 6dqy
-
-。</description><guid isPermaLink="true">https://19940816.xyz/post/docker%20-bu-shu-hao-shi-chuan-qi-si-fu-3-jiao-cheng.html</guid><pubDate>Mon, 01 Dec 2025 11:07:10 +0000</pubDate></item><item><title>s-ui面板使用教程搭建Reality节点</title><link>https://19940816.xyz/post/s-ui-mian-ban-shi-yong-jiao-cheng-da-jian-Reality-jie-dian.html</link><description>## 安装sui
+## nginx反向代理
+如果你设置了Nginx反向代理游戏流量从而导致游戏服务器获取不到真实客户端 IP。</description><guid isPermaLink="true">https://19940816.xyz/post/docker%20-bu-shu-hao-shi-chuan-qi-si-fu-3-jiao-cheng.html</guid><pubDate>Mon, 01 Dec 2025 11:07:10 +0000</pubDate></item><item><title>s-ui面板使用教程搭建Reality节点</title><link>https://19940816.xyz/post/s-ui-mian-ban-shi-yong-jiao-cheng-da-jian-Reality-jie-dian.html</link><description>## 安装sui
 项目：https://github.com/alireza0/s-ui
 
 `bash &lt;(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui/master/install.sh)`
