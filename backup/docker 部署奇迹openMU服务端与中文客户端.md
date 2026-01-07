@@ -1,16 +1,13 @@
 
 # 部署服务端
 
-## 前提
-以下端口确保未被占用
-5080|8080|55901
-55902|55903|55904
-55905|55906|44405
-44406|55980
+## ~~检查端口占用~~ 非必须
+以下端口确保未被占用,可ssh进入飞牛执行命令检查
+`sudo lsof -i :5080 -i :8080 -i :55901 -i :55902 -i :55903 -i :55904 -i :55905 -i :55906 -i :44405 -i :44406 -i :55980`
 
 ## 创建数据目录，修改密码
 
-创建一个目录存放持久化文件，例：
+创建一个名为openmu的工作目录，并目录下创建一个dbdata目录，例：
 ` mkdir -p /root/docker-file/openmu/dbdata`
 **dbdata**:为空目录为后续数据库固化用；
 **openmu目录** : `nginx.dev.conf` `.htpasswd` 两个文件拷贝到这里；并且yml文件也创建在这里；
@@ -18,10 +15,29 @@
 ```
 admin:$2y$10$xYL2d/QEukwGmX0uNZubsunL0qcANuTYkpapRVdlu5q3ymCpvOEh.
 ```
-替换admin:后面的密文即可
+替换admin:后面的密文即可。相关文件下载：
+> 链接：https://pan.wo.cn/s/1b1Y4b78126
+提取码：XfZX
 
-## 创建compose.yml
-创建后`docker compose up -d`运行
+**正确的目录结构**：
+- openmu --工作目录
+     - dbdata --数据库目录
+	 - nginx.dev.conf --nginx配置文件
+	 - .htpasswd -- web面板用户配置文件
+	 - docker-compose.yml --yml文件
+
+![目录结构.jpg](https://img.imgdd.com/af4d6482-a8e8-49ef-b35d-1a36fbfd9015.jpg)
+
+---
+确保以上目录&文件都在（yml文件可除外）再进行下一步
+
+## 创建容器
+步骤：打开docekr - compose - 新增项目
+项目名称：随意
+路径选择：openmu工作目录
+勾选创建后立即启动
+创建yml文件填入配置,如果复制后格式不对可让ai进行格式化修正
+
 ```
 services:
   nginx-80:
@@ -73,8 +89,10 @@ services:
 volumes:
   dbdata:
   ```
+---
+
 ## 配置服务端
-ip:5080打开服务管理面板，输入账户密码。
+`ip:5080`打开服务管理面板，输入账户密码。
 菜单选择 Game Configuration - System 
 **IP Resolving** :改成 Custom
 **Custom IP / Hostname**：填写服务器ip
@@ -95,7 +113,7 @@ ip:5080打开服务管理面板，输入账户密码。
 ![管理面板.jpg](https://img.imgdd.com/520be959-3d70-444b-98a5-8929960b4ccc.jpg)
 
 ## 配置客户端
-下载：https://pan.quark.cn/s/3fc97cb0f7f7
+下载地址：https://pan.quark.cn/s/3fc97cb0f7f7
 
 解压打开登陆器点击**+**添加个服务器，输入服务端的IP即可；
 ![](https://img.imgdd.com/b3bae4ae-a05d-41db-810a-8f95d1992f26.jpg)
@@ -109,6 +127,7 @@ ip:5080打开服务管理面板，输入账户密码。
 ![newscreen35760453.jpg](https://img.imgdd.com/5bb832b9-ba8e-4eb0-95da-eec74c266f5d.jpg)
 
 end 
-## 其它
+
+其它
 1. [项目github](https://github.com/MUnique/OpenMU)
 2. [Bcrypt在线加解密](https://www.bejson.com/encrypt/bcrpyt_encode/)

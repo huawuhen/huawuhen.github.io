@@ -10,16 +10,13 @@
 <meta name="description" content="
 # 部署服务端
 
-## 前提
-以下端口确保未被占用
-5080|8080|55901
-55902|55903|55904
-55905|55906|44405
-44406|55980
+## ~~检查端口占用~~ 非必须
+以下端口确保未被占用,可ssh进入飞牛执行命令检查
+`sudo lsof -i :5080 -i :8080 -i :55901 -i :55902 -i :55903 -i :55904 -i :55905 -i :55906 -i :44405 -i :44406 -i :55980`
 
 ## 创建数据目录，修改密码
 
-创建一个目录存放持久化文件，例：
+创建一个名为openmu的工作目录，并目录下创建一个dbdata目录，例：
 ` mkdir -p /root/docker-file/openmu/dbdata`
 **dbdata**:为空目录为后续数据库固化用；
 **openmu目录** : `nginx.dev.conf` `.htpasswd` 两个文件拷贝到这里；并且yml文件也创建在这里；
@@ -27,77 +24,18 @@
 ```
 admin:$2y$10$xYL2d/QEukwGmX0uNZubsunL0qcANuTYkpapRVdlu5q3ymCpvOEh.
 ```
-替换admin:后面的密文即可
-
-## 创建compose.yml
-创建后`docker compose up -d`运行
-```
-services:
-  nginx-80:
-    image: nginx:alpine
-    container_name: nginx-80
-    ports:
-      - '5080:80'
-    volumes:
-      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
-      - ./.htpasswd:/etc/nginx/.htpasswd
-    depends_on:
-      - openmu-startup
-
-  openmu-startup:
-    image: munique/openmu
-    container_name: openmu-startup
-    ports:
-      - '8080'
-      - '55901:55901'
-      - '55902:55902'
-      - '55903:55903'
-      - '55904:55904'
-      - '55905:55905'
-      - '55906:55906'
-      - '44405:44405'
-      - '44406:44406'
-      - '55980:55980'
-    environment:
-      DB_HOST: database
-      ASPNETCORE_URLS: http://+:8080
-    working_dir: /app/
-    volumes:
-      - ./.htpasswd:/etc/nginx/.htpasswd
-    depends_on:
-      - database
-
-  database:
-    image: postgres
-    container_name: database
-    environment:
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: openmu
-      POSTGRES_USER: postgres
-    ports:
-      - '5432'
-    volumes:
-      - dbdata:/var/lib/postgresql #store data on volume
-
-volumes:
-  dbdata:
-  ```
-## 配置服务端
-ip:5080打开服务管理面板，输入账户密码。">
+替换admin:后面的密文即可。">
 <meta property="og:title" content="docker 部署奇迹openMU服务端与中文客户端">
 <meta property="og:description" content="
 # 部署服务端
 
-## 前提
-以下端口确保未被占用
-5080|8080|55901
-55902|55903|55904
-55905|55906|44405
-44406|55980
+## ~~检查端口占用~~ 非必须
+以下端口确保未被占用,可ssh进入飞牛执行命令检查
+`sudo lsof -i :5080 -i :8080 -i :55901 -i :55902 -i :55903 -i :55904 -i :55905 -i :55906 -i :44405 -i :44406 -i :55980`
 
 ## 创建数据目录，修改密码
 
-创建一个目录存放持久化文件，例：
+创建一个名为openmu的工作目录，并目录下创建一个dbdata目录，例：
 ` mkdir -p /root/docker-file/openmu/dbdata`
 **dbdata**:为空目录为后续数据库固化用；
 **openmu目录** : `nginx.dev.conf` `.htpasswd` 两个文件拷贝到这里；并且yml文件也创建在这里；
@@ -105,63 +43,7 @@ ip:5080打开服务管理面板，输入账户密码。">
 ```
 admin:$2y$10$xYL2d/QEukwGmX0uNZubsunL0qcANuTYkpapRVdlu5q3ymCpvOEh.
 ```
-替换admin:后面的密文即可
-
-## 创建compose.yml
-创建后`docker compose up -d`运行
-```
-services:
-  nginx-80:
-    image: nginx:alpine
-    container_name: nginx-80
-    ports:
-      - '5080:80'
-    volumes:
-      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
-      - ./.htpasswd:/etc/nginx/.htpasswd
-    depends_on:
-      - openmu-startup
-
-  openmu-startup:
-    image: munique/openmu
-    container_name: openmu-startup
-    ports:
-      - '8080'
-      - '55901:55901'
-      - '55902:55902'
-      - '55903:55903'
-      - '55904:55904'
-      - '55905:55905'
-      - '55906:55906'
-      - '44405:44405'
-      - '44406:44406'
-      - '55980:55980'
-    environment:
-      DB_HOST: database
-      ASPNETCORE_URLS: http://+:8080
-    working_dir: /app/
-    volumes:
-      - ./.htpasswd:/etc/nginx/.htpasswd
-    depends_on:
-      - database
-
-  database:
-    image: postgres
-    container_name: database
-    environment:
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: openmu
-      POSTGRES_USER: postgres
-    ports:
-      - '5432'
-    volumes:
-      - dbdata:/var/lib/postgresql #store data on volume
-
-volumes:
-  dbdata:
-  ```
-## 配置服务端
-ip:5080打开服务管理面板，输入账户密码。">
+替换admin:后面的密文即可。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/19904710?v=4">
@@ -233,23 +115,42 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><h1>部署服务端</h1>
-<h2>前提</h2>
-<p>以下端口确保未被占用<br>
-5080|8080|55901<br>
-55902|55903|55904<br>
-55905|55906|44405<br>
-44406|55980</p>
+<h2><del>检查端口占用</del> 非必须</h2>
+<p>以下端口确保未被占用,可ssh进入飞牛执行命令检查<br>
+<code class="notranslate">sudo lsof -i :5080 -i :8080 -i :55901 -i :55902 -i :55903 -i :55904 -i :55905 -i :55906 -i :44405 -i :44406 -i :55980</code></p>
 <h2>创建数据目录，修改密码</h2>
-<p>创建一个目录存放持久化文件，例：<br>
+<p>创建一个名为openmu的工作目录，并目录下创建一个dbdata目录，例：<br>
 <code class="notranslate"> mkdir -p /root/docker-file/openmu/dbdata</code><br>
 <strong>dbdata</strong>:为空目录为后续数据库固化用；<br>
 <strong>openmu目录</strong> : <code class="notranslate">nginx.dev.conf</code> <code class="notranslate">.htpasswd</code> 两个文件拷贝到这里；并且yml文件也创建在这里；<br>
 <strong>.htpasswd文件</strong>：是web面板的密码，如需修改使用Bcrypt密码在线生成工具，得到加密后的密文替换即可</p>
 <pre class="notranslate"><code class="notranslate">admin:$2y$10$xYL2d/QEukwGmX0uNZubsunL0qcANuTYkpapRVdlu5q3ymCpvOEh.
 </code></pre>
-<p>替换admin:后面的密文即可</p>
-<h2>创建compose.yml</h2>
-<p>创建后<code class="notranslate">docker compose up -d</code>运行</p>
+<p>替换admin:后面的密文即可。相关文件下载：</p>
+<blockquote>
+<p>链接：<a href="https://pan.wo.cn/s/1b1Y4b78126" rel="nofollow">https://pan.wo.cn/s/1b1Y4b78126</a><br>
+提取码：XfZX</p>
+</blockquote>
+<p><strong>正确的目录结构</strong>：</p>
+<ul>
+<li>openmu --工作目录
+<ul>
+<li>dbdata --数据库目录</li>
+<li>nginx.dev.conf --nginx配置文件</li>
+<li>.htpasswd -- web面板用户配置文件</li>
+<li>docker-compose.yml --yml文件</li>
+</ul>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/7dbdb8eb1bea08d45af9bac3eb4f1532979577e95304a32681699b79fca2761e/68747470733a2f2f696d672e696d6764642e636f6d2f61663464363438322d613865382d343965662d623335642d3161333666626664393031352e6a7067"><img src="https://camo.githubusercontent.com/7dbdb8eb1bea08d45af9bac3eb4f1532979577e95304a32681699b79fca2761e/68747470733a2f2f696d672e696d6764642e636f6d2f61663464363438322d613865382d343965662d623335642d3161333666626664393031352e6a7067" alt="目录结构.jpg" data-canonical-src="https://img.imgdd.com/af4d6482-a8e8-49ef-b35d-1a36fbfd9015.jpg" style="max-width: 100%;"></a></p>
+<hr>
+<p>确保以上目录&amp;文件都在（yml文件可除外）再进行下一步</p>
+<h2>创建容器</h2>
+<p>步骤：打开docekr - compose - 新增项目<br>
+项目名称：随意<br>
+路径选择：openmu工作目录<br>
+勾选创建后立即启动<br>
+创建yml文件填入配置,如果复制后格式不对可让ai进行格式化修正</p>
 <pre class="notranslate"><code class="notranslate">services:
   nginx-80:
     image: nginx:alpine
@@ -300,8 +201,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 volumes:
   dbdata:
 </code></pre>
+<hr>
 <h2>配置服务端</h2>
-<p>ip:5080打开服务管理面板，输入账户密码。<br>
+<p><code class="notranslate">ip:5080</code>打开服务管理面板，输入账户密码。<br>
 菜单选择 Game Configuration - System<br>
 <strong>IP Resolving</strong> :改成 Custom<br>
 <strong>Custom IP / Hostname</strong>：填写服务器ip<br>
@@ -318,7 +220,7 @@ volumes:
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e57b428108f57d85c4da0ed2cf0679abde91a268fea457e36f2f71502ca85326/68747470733a2f2f696d672e696d6764642e636f6d2f35323062653935392d336437302d343434622d393861352d3839323939363062346363632e6a7067"><img src="https://camo.githubusercontent.com/e57b428108f57d85c4da0ed2cf0679abde91a268fea457e36f2f71502ca85326/68747470733a2f2f696d672e696d6764642e636f6d2f35323062653935392d336437302d343434622d393861352d3839323939363062346363632e6a7067" alt="管理面板.jpg" data-canonical-src="https://img.imgdd.com/520be959-3d70-444b-98a5-8929960b4ccc.jpg" style="max-width: 100%;"></a></p>
 </blockquote>
 <h2>配置客户端</h2>
-<p>下载：<a href="https://pan.quark.cn/s/3fc97cb0f7f7" rel="nofollow">https://pan.quark.cn/s/3fc97cb0f7f7</a></p>
+<p>下载地址：<a href="https://pan.quark.cn/s/3fc97cb0f7f7" rel="nofollow">https://pan.quark.cn/s/3fc97cb0f7f7</a></p>
 <p>解压打开登陆器点击**+**添加个服务器，输入服务端的IP即可；<br>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/fd7806d8e71fd9e01495ec2691cccb9cc01c5084a90917ed0fd594f44b03129d/68747470733a2f2f696d672e696d6764642e636f6d2f62336261653461652d613035642d343164622d383130612d3866393564313939326632362e6a7067"><img src="https://camo.githubusercontent.com/fd7806d8e71fd9e01495ec2691cccb9cc01c5084a90917ed0fd594f44b03129d/68747470733a2f2f696d672e696d6764642e636f6d2f62336261653461652d613035642d343164622d383130612d3866393564313939326632362e6a7067" alt="" data-canonical-src="https://img.imgdd.com/b3bae4ae-a05d-41db-810a-8f95d1992f26.jpg" style="max-width: 100%;"></a></p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a32c53eb6567154188dac2cdec74f438cb74eb23dc255b4f29fcc2be3981455d/68747470733a2f2f696d672e696d6764642e636f6d2f64653634633638322d643362622d343130662d623530632d3233353539386639313035342e6a7067"><img src="https://camo.githubusercontent.com/a32c53eb6567154188dac2cdec74f438cb74eb23dc255b4f29fcc2be3981455d/68747470733a2f2f696d672e696d6764642e636f6d2f64653634633638322d643362622d343130662d623530632d3233353539386639313035342e6a7067" alt="" data-canonical-src="https://img.imgdd.com/de64c682-d3bb-410f-b50c-235598f91054.jpg" style="max-width: 100%;"></a></p>
@@ -326,7 +228,7 @@ volumes:
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/94cda6d478e63a857fca2dccceb49a7ac6a65e3f96cd2db754e9ceb84b531a70/68747470733a2f2f696d672e696d6764642e636f6d2f39306630326364322d343063392d343436312d613266362d6564373537393739333463342e6a7067"><img src="https://camo.githubusercontent.com/94cda6d478e63a857fca2dccceb49a7ac6a65e3f96cd2db754e9ceb84b531a70/68747470733a2f2f696d672e696d6764642e636f6d2f39306630326364322d343063392d343436312d613266362d6564373537393739333463342e6a7067" alt="newscreen34716953.jpg" data-canonical-src="https://img.imgdd.com/90f02cd2-40c9-4461-a2f6-ed75797934c4.jpg" style="max-width: 100%;"></a></p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c35af244e84678823a3686e0e8fbf959eb959a86d1e586e0bddb359f0e9ace31/68747470733a2f2f696d672e696d6764642e636f6d2f35626238333262392d626138652d346562302d393564612d6565633734633236366635642e6a7067"><img src="https://camo.githubusercontent.com/c35af244e84678823a3686e0e8fbf959eb959a86d1e586e0bddb359f0e9ace31/68747470733a2f2f696d672e696d6764642e636f6d2f35626238333262392d626138652d346562302d393564612d6565633734633236366635642e6a7067" alt="newscreen35760453.jpg" data-canonical-src="https://img.imgdd.com/5bb832b9-ba8e-4eb0-95da-eec74c266f5d.jpg" style="max-width: 100%;"></a></p>
 <p>end</p>
-<h2>其它</h2>
+<p>其它</p>
 <ol>
 <li><a href="https://github.com/MUnique/OpenMU">项目github</a></li>
 <li><a href="https://www.bejson.com/encrypt/bcrpyt_encode/" rel="nofollow">Bcrypt在线加解密</a></li>

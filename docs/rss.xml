@@ -1,17 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Tue, 06 Jan 2026 12:09:20 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker 部署奇迹openMU服务端与中文客户端</title><link>https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Wed, 07 Jan 2026 06:10:26 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker 部署奇迹openMU服务端与中文客户端</title><link>https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html</link><description>
 # 部署服务端
 
-## 前提
-以下端口确保未被占用
-5080|8080|55901
-55902|55903|55904
-55905|55906|44405
-44406|55980
+## ~~检查端口占用~~ 非必须
+以下端口确保未被占用,可ssh进入飞牛执行命令检查
+`sudo lsof -i :5080 -i :8080 -i :55901 -i :55902 -i :55903 -i :55904 -i :55905 -i :55906 -i :44405 -i :44406 -i :55980`
 
 ## 创建数据目录，修改密码
 
-创建一个目录存放持久化文件，例：
+创建一个名为openmu的工作目录，并目录下创建一个dbdata目录，例：
 ` mkdir -p /root/docker-file/openmu/dbdata`
 **dbdata**:为空目录为后续数据库固化用；
 **openmu目录** : `nginx.dev.conf` `.htpasswd` 两个文件拷贝到这里；并且yml文件也创建在这里；
@@ -19,63 +16,7 @@
 ```
 admin:$2y$10$xYL2d/QEukwGmX0uNZubsunL0qcANuTYkpapRVdlu5q3ymCpvOEh.
 ```
-替换admin:后面的密文即可
-
-## 创建compose.yml
-创建后`docker compose up -d`运行
-```
-services:
-  nginx-80:
-    image: nginx:alpine
-    container_name: nginx-80
-    ports:
-      - '5080:80'
-    volumes:
-      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
-      - ./.htpasswd:/etc/nginx/.htpasswd
-    depends_on:
-      - openmu-startup
-
-  openmu-startup:
-    image: munique/openmu
-    container_name: openmu-startup
-    ports:
-      - '8080'
-      - '55901:55901'
-      - '55902:55902'
-      - '55903:55903'
-      - '55904:55904'
-      - '55905:55905'
-      - '55906:55906'
-      - '44405:44405'
-      - '44406:44406'
-      - '55980:55980'
-    environment:
-      DB_HOST: database
-      ASPNETCORE_URLS: http://+:8080
-    working_dir: /app/
-    volumes:
-      - ./.htpasswd:/etc/nginx/.htpasswd
-    depends_on:
-      - database
-
-  database:
-    image: postgres
-    container_name: database
-    environment:
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: openmu
-      POSTGRES_USER: postgres
-    ports:
-      - '5432'
-    volumes:
-      - dbdata:/var/lib/postgresql #store data on volume
-
-volumes:
-  dbdata:
-  ```
-## 配置服务端
-ip:5080打开服务管理面板，输入账户密码。</description><guid isPermaLink="true">https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html</guid><pubDate>Tue, 30 Dec 2025 11:55:39 +0000</pubDate></item><item><title>5美元获得永久爱沙尼亚esim号码</title><link>https://19940816.xyz/post/5-mei-yuan-huo-de-yong-jiu-ai-sha-ni-ya-esim-hao-ma.html</link><description># 一次性5美元获得永久爱沙尼亚esim号码 免费接码
+替换admin:后面的密文即可。</description><guid isPermaLink="true">https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html</guid><pubDate>Tue, 30 Dec 2025 11:55:39 +0000</pubDate></item><item><title>5美元获得永久爱沙尼亚esim号码</title><link>https://19940816.xyz/post/5-mei-yuan-huo-de-yong-jiu-ai-sha-ni-ya-esim-hao-ma.html</link><description># 一次性5美元获得永久爱沙尼亚esim号码 免费接码
 
 1. 打开官网https://esimplus.me/zh-cn 如果不是中文右上角国旗处可切换。</description><guid isPermaLink="true">https://19940816.xyz/post/5-mei-yuan-huo-de-yong-jiu-ai-sha-ni-ya-esim-hao-ma.html</guid><pubDate>Mon, 22 Dec 2025 15:17:02 +0000</pubDate></item><item><title>一键安装带白名单管理的mtporxy</title><link>https://19940816.xyz/post/yi-jian-an-zhuang-dai-bai-ming-dan-guan-li-de-mtporxy.html</link><description># 介绍
 https://github.com/Usagi537233/mtg-whitelist
