@@ -1,14 +1,13 @@
 # VPS测试
-## 融合怪脚本-首推
+## NodeQuality 首推
+```
+bash <(curl -sL https://run.NodeQuality.com)
+```
+### 融合怪脚本
 ```
 curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
 ```
-## 三网测速
-` bash <(curl -sL https://raw.githubusercontent.com/i-abc/Speedtest/main/speedtest.sh) `
-` bash <(curl -Lso- https://www.infski.com/files/superspeed.sh) `
-## 测速回国路由
-` wget -qO- git.io/besttrace | bash `
-## 解锁测试（第一步选只跨国平台)
+### 解锁测试（第一步选只跨国平台)
 ` bash <(curl -sL Media.Check.Place) `
 
 # 基本设置
