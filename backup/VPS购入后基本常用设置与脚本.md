@@ -16,7 +16,10 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## bbr加速
 ` curl -Lso bbrinstall.sh https://git.io/kernel.sh  && chmod +x bbrinstall.sh && ./bbrinstall.sh `
 ## 强烈更改SSH默认端口
-通过` bash <(curl -sL kejilion.sh) ` 脚本更改
+```
+# 意修改默认22为2222
+sudo sed -i 's/^#Port 22/Port 2222/' /etc/ssh/sshd_config
+```
 ## 安装ufw防火墙
 `apt install ufw -y`
 **ufw防火墙基本规则**
