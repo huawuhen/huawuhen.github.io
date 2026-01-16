@@ -13,12 +13,15 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 # 基本设置
 ## 设置时区
 ` timedatectl set-timezone Asia/Shanghai `
+## 基本软件安装
+## lrzsz\htop
+` apt-get install lrzsz -y && apt-get install htop -y && apt-get install curl `
 ## bbr加速
 ` curl -Lso bbrinstall.sh https://git.io/kernel.sh  && chmod +x bbrinstall.sh && ./bbrinstall.sh `
 ## 强烈更改SSH默认端口
 ```
-# 意修改默认22为2222
-sudo sed -i 's/^#Port 22/Port 2222/' /etc/ssh/sshd_config
+意修改默认22为9022
+sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
 ## 安装ufw防火墙
 `apt install ufw -y`
@@ -57,9 +60,6 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 
 
 ---
-# 基本软件安装
-## lrzsz\htop
-` apt-get install lrzsz -y && apt-get install htop -y `
 ## Docker安装
 ` curl -fsSL https://get.docker.com  | sh - `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。
