@@ -15,7 +15,7 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ` timedatectl set-timezone Asia/Shanghai `
 ## 基本软件安装
 ## lrzsz\htop
-` apt-get install lrzsz -y && apt-get install htop -y && apt-get install curl `
+` apt-get install lrzsz -y && apt-get install htop -y && apt-get install curl -y && apt-get install vim -y `
 ## bbr加速
 ` curl -Lso bbrinstall.sh https://git.io/kernel.sh  && chmod +x bbrinstall.sh && ./bbrinstall.sh `
 ## 强烈更改SSH默认端口
