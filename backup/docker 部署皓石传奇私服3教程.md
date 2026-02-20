@@ -1,7 +1,8 @@
 # docker 部署皓石传奇
 
 ## 项目
-https://github.com/[raphaelcheung/zircon-legend-server](https://github.com/raphaelcheung/zircon-legend-server)
+https://github.com/raphaelcheung/zircon-legend-server
+
 https://hub.docker.com/r/livse/zirconlegend
 
 # 服务端部署
@@ -83,7 +84,8 @@ server {
 
 # 客户端
 下载客户端
-解压修改Legend.ini的你的服务器ip和端口
+解压修改Legend.ini的你的服务器ip&域名和端口
+域名例如 `mir.xx.com` 前面不用带http
 ```
 [Network]
 IPAddress=x.x.x.x
