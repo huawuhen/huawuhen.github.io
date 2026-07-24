@@ -3,10 +3,7 @@
 ```
 bash <(curl -sL https://run.NodeQuality.com)
 ```
-### 融合怪脚本
-```
-curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
-```
+
 ### 解锁测试（第一步选只跨国平台)
 ` bash <(curl -sL Media.Check.Place) `
 
@@ -17,7 +14,7 @@ curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x
 ## lrzsz\htop
 ` apt-get install lrzsz -y && apt-get install htop -y && apt-get install curl -y && apt-get install vim -y `
 ## bbr加速
-` curl -Lso bbrinstall.sh https://git.io/kernel.sh  && chmod +x bbrinstall.sh && ./bbrinstall.sh `
+` bash <(curl -fsSL https://raw.githubusercontent.com/byJoey/Actions-bbr-v3/main/install.sh) `
 ## 强烈更改SSH默认端口
 ```
 意修改默认22为9022
