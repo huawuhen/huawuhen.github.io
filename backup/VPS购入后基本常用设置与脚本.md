@@ -12,7 +12,7 @@ bash <(curl -sL https://run.NodeQuality.com)
 ` timedatectl set-timezone Asia/Shanghai `
 ## 基本软件安装
 ## lrzsz\htop
-` apt-get install lrzsz -y && apt-get install htop -y && apt-get install curl -y && apt-get install vim -y `
+` apt-get update -y && apt-get install lrzsz -y && apt-get install htop -y && apt-get install curl -y && apt-get install vim -y `
 ## bbr加速
 ` bash <(curl -fsSL https://raw.githubusercontent.com/byJoey/Actions-bbr-v3/main/install.sh) `
 ## 强烈更改SSH默认端口
@@ -48,7 +48,7 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 
 
-## bash美化
+## bash美化（可选）
 在root目录下以root账户运行
 `git clone https://github.com/ohmybash/oh-my-bash.git ~/.oh-my-bash && cp ~/.oh-my-bash/templates/bashrc.osh-template ~/.bashrc && source ~/.bashrc`
 
