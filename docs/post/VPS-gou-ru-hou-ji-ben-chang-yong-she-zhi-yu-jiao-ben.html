@@ -54,21 +54,20 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ## 安装fail2ban
 `wget https://raw.githubusercontent.com/huawuhen/Fail2ban/refs/heads/master/fail2ban.sh && chmod +x fail2ban.sh && bash fail2ban.sh`
 
-更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
+## 仅允许中国大陆IP访问ssh端口【强烈推荐】
+` sudo apt install ipset `
 
+授权执行脚本：https://git.19940816.xyz/get_china_ip.sh
 
-## bash美化（可选）
-在root目录下以root账户运行
-`git clone https://github.com/ohmybash/oh-my-bash.git ~/.oh-my-bash && cp ~/.oh-my-bash/templates/bashrc.osh-template ~/.bashrc && source ~/.bashrc`
+```
+# 允许中国大陆 IP 访问你的服务（例如 SSH 端口 22，或者 Web 端口 80/443）
+iptables -A INPUT -p tcp --dport 22 -m set --match-set china_ip src -j ACCEPT
 
-> 卸载
-> `~/uninstall_oh_my_bash`
+# 拒绝其他所有来源对该端口的访问
+iptables -A INPUT -p tcp --dport 22 -j DROP
 
-
----
-## Docker安装
-` curl -fsSL https://get.docker.com  | sh - `
-会自动安装 Docker Compose 组件，调用命令是：docker compose。">
+```
+搞不定了让AI帮你。">
 <meta property="og:title" content="VPS购入后基本常用设置与脚本">
 <meta property="og:description" content="# VPS测试
 ## NodeQuality 首推
@@ -117,21 +116,20 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ## 安装fail2ban
 `wget https://raw.githubusercontent.com/huawuhen/Fail2ban/refs/heads/master/fail2ban.sh && chmod +x fail2ban.sh && bash fail2ban.sh`
 
-更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
+## 仅允许中国大陆IP访问ssh端口【强烈推荐】
+` sudo apt install ipset `
 
+授权执行脚本：https://git.19940816.xyz/get_china_ip.sh
 
-## bash美化（可选）
-在root目录下以root账户运行
-`git clone https://github.com/ohmybash/oh-my-bash.git ~/.oh-my-bash && cp ~/.oh-my-bash/templates/bashrc.osh-template ~/.bashrc && source ~/.bashrc`
+```
+# 允许中国大陆 IP 访问你的服务（例如 SSH 端口 22，或者 Web 端口 80/443）
+iptables -A INPUT -p tcp --dport 22 -m set --match-set china_ip src -j ACCEPT
 
-> 卸载
-> `~/uninstall_oh_my_bash`
+# 拒绝其他所有来源对该端口的访问
+iptables -A INPUT -p tcp --dport 22 -j DROP
 
-
----
-## Docker安装
-` curl -fsSL https://get.docker.com  | sh - `
-会自动安装 Docker Compose 组件，调用命令是：docker compose。">
+```
+搞不定了让AI帮你。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://19940816.xyz/post/VPS-gou-ru-hou-ji-ben-chang-yong-she-zhi-yu-jiao-ben.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/19904710?v=4">
@@ -243,6 +241,17 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 </code></pre>
 <h2>安装fail2ban</h2>
 <p><code class="notranslate">wget https://raw.githubusercontent.com/huawuhen/Fail2ban/refs/heads/master/fail2ban.sh &amp;&amp; chmod +x fail2ban.sh &amp;&amp; bash fail2ban.sh</code></p>
+<h2>仅允许中国大陆IP访问ssh端口【强烈推荐】</h2>
+<p><code class="notranslate">sudo apt install ipset</code></p>
+<p>授权执行脚本：<a href="https://git.19940816.xyz/get_china_ip.sh" rel="nofollow">https://git.19940816.xyz/get_china_ip.sh</a></p>
+<pre class="notranslate"><code class="notranslate"># 允许中国大陆 IP 访问你的服务（例如 SSH 端口 22，或者 Web 端口 80/443）
+iptables -A INPUT -p tcp --dport 22 -m set --match-set china_ip src -j ACCEPT
+
+# 拒绝其他所有来源对该端口的访问
+iptables -A INPUT -p tcp --dport 22 -j DROP
+
+</code></pre>
+<p>搞不定了让AI帮你。</p>
 <p>更多vps安全设置<a href="https://linux.do/t/topic/267502" rel="nofollow">linuxdo服务器安全配置</a></p>
 <h2>bash美化（可选）</h2>
 <p>在root目录下以root账户运行<br>

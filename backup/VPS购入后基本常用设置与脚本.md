@@ -45,6 +45,21 @@ ufw allow from 1.1.1.1 to proto tcp any port 22 # 指定tcp协议
 ## 安装fail2ban
 `wget https://raw.githubusercontent.com/huawuhen/Fail2ban/refs/heads/master/fail2ban.sh && chmod +x fail2ban.sh && bash fail2ban.sh`
 
+## 仅允许中国大陆IP访问ssh端口【强烈推荐】
+` sudo apt install ipset `
+
+授权执行脚本：https://git.19940816.xyz/get_china_ip.sh
+
+```
+# 允许中国大陆 IP 访问你的服务（例如 SSH 端口 22，或者 Web 端口 80/443）
+iptables -A INPUT -p tcp --dport 22 -m set --match-set china_ip src -j ACCEPT
+
+# 拒绝其他所有来源对该端口的访问
+iptables -A INPUT -p tcp --dport 22 -j DROP
+
+```
+搞不定了让AI帮你。
+
 更多vps安全设置[linuxdo服务器安全配置](https://linux.do/t/topic/267502)
 
 
