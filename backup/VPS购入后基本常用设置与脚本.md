@@ -75,23 +75,21 @@ iptables -A INPUT -p tcp --dport 22 -j DROP
 ## Docker安装
 ` curl -fsSL https://get.docker.com  | sh - `
 会自动安装 Docker Compose 组件，调用命令是：docker compose。
-### 安装docker 管理（国内镜像加速）
+### 安装docker 管理
 1. dpanel推荐
 ```
 docker run -d --name dpanel --restart=always \
  -p 8807:8080 -e APP_NAME=dpanel \
- -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
- dpanel/dpanel:lite
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -v /home/dpanel:/dpanel dpanel/dpanel:lite
 ```
 国内安装
 ```
 docker run -d --name dpanel --restart=always \
  -p 8807:8080 -e APP_NAME=dpanel \
- -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
- dpanel/dpanel:lite
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -v /home/dpanel:/dpanel registry.cn-hangzhou.aliyuncs.com/dpanel/dpanel:lite
 ```
-2. 老牌pt
-` docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest `
 
 ## Caddy 安装
 ` bash <(curl -Ls https://git.huawuhen.online/installcaddy.sh) `
@@ -100,7 +98,4 @@ docker run -d --name dpanel --restart=always \
 1. 推荐Reality
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `
 [reality目标域名](https://bulianglin.com/archives/nicename.html)
-
-2. 八合一
-[https://github.com/mack-a/v2ray-agent](https://github.com/mack-a/v2ray-agent)
 

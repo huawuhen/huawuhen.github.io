@@ -264,38 +264,28 @@ iptables -A INPUT -p tcp --dport 22 -j DROP
 <h2>Docker安装</h2>
 <p><code class="notranslate">curl -fsSL https://get.docker.com  | sh -</code><br>
 会自动安装 Docker Compose 组件，调用命令是：docker compose。</p>
-<h3>安装docker 管理（国内镜像加速）</h3>
+<h3>安装docker 管理</h3>
 <ol>
 <li>dpanel推荐</li>
 </ol>
 <pre class="notranslate"><code class="notranslate">docker run -d --name dpanel --restart=always \
  -p 8807:8080 -e APP_NAME=dpanel \
- -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
- dpanel/dpanel:lite
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -v /home/dpanel:/dpanel dpanel/dpanel:lite
 </code></pre>
 <p>国内安装</p>
 <pre class="notranslate"><code class="notranslate">docker run -d --name dpanel --restart=always \
  -p 8807:8080 -e APP_NAME=dpanel \
- -v /var/run/docker.sock:/var/run/docker.sock -v dpanel:/dpanel \
- dpanel/dpanel:lite
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -v /home/dpanel:/dpanel registry.cn-hangzhou.aliyuncs.com/dpanel/dpanel:lite
 </code></pre>
-<ol start="2">
-<li>老牌pt<br>
-<code class="notranslate">docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/huawuhen-ci/huawuhendocker:latest</code></li>
-</ol>
 <h2>Caddy 安装</h2>
 <p><code class="notranslate">bash &lt;(curl -Ls https://git.huawuhen.online/installcaddy.sh)</code></p>
 <h1>安装代理</h1>
 <ol>
-<li>
-<p>推荐Reality<br>
+<li>推荐Reality<br>
 <code class="notranslate">wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh &amp;&amp; bash tcp-wss.sh</code><br>
-<a href="https://bulianglin.com/archives/nicename.html" rel="nofollow">reality目标域名</a></p>
-</li>
-<li>
-<p>八合一<br>
-<a href="https://github.com/mack-a/v2ray-agent">https://github.com/mack-a/v2ray-agent</a></p>
-</li>
+<a href="https://bulianglin.com/archives/nicename.html" rel="nofollow">reality目标域名</a></li>
 </ol></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
