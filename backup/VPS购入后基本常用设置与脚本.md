@@ -97,5 +97,5 @@ docker run -d --name dpanel --restart=always \
 # 安装代理
 1. 推荐Reality
 ` wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh `
-[reality目标域名](https://bulianglin.com/archives/nicename.html)
+[reality目标域名](https://reality-domain-helper.vercel.app/)
 
