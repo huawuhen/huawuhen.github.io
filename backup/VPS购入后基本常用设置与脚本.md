@@ -20,7 +20,7 @@ bash <(curl -sL https://run.NodeQuality.com)
 ```
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
-## SSH密钥登录
+## SSH密钥登录（密钥登录也是走SSH端口所以端口还要改，防爆破fail2ban还要装）
 **本地设备创建密钥，会生成一对公钥/私钥**
 `ssh-keygen -t ed25519 -C "win11"`  **加 -C 是给密钥加个备注我这里加了win11备注这个不需要也可以
 `ssh-keygen -t ed25519` **无备注版** 
