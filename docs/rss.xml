@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Sat, 07 Nov 2026 02:03:53 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker 部署奇迹openMU服务端与中文客户端</title><link>https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>花花部落格</title><link>https://19940816.xyz</link><description>花花的自留地</description><copyright>花花部落格</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/19904710?v=4</url><title>avatar</title><link>https://19940816.xyz</link></image><lastBuildDate>Sat, 07 Nov 2026 02:19:45 +0000</lastBuildDate><managingEditor>花花部落格</managingEditor><ttl>60</ttl><webMaster>花花部落格</webMaster><item><title>docker 部署奇迹openMU服务端与中文客户端</title><link>https://19940816.xyz/post/docker%20-bu-shu-qi-ji-openMU-fu-wu-duan-yu-zhong-wen-ke-hu-duan.html</link><description>
 # 部署服务端
 
 ## ~~检查端口占用~~ 非必须
@@ -310,8 +310,8 @@ bash &lt;(curl -sL https://run.NodeQuality.com)
 ## bbr加速
 ` bash &lt;(curl -fsSL https://raw.githubusercontent.com/byJoey/Actions-bbr-v3/main/install.sh) `
 ## 强烈更改SSH默认端口
+修改默认22为9022
 ```
-意修改默认22为9022
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
 ## SSH密钥登录
@@ -320,6 +320,7 @@ sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 `ssh-keygen -t ed25519` **无备注版** 
 **将本地生成公钥加入到VPS**
 `vim ~/.ssh/authorized_keys`  **填入本机的公钥**
+### 修改ssh配置 `sudo vim /etc/ssh/sshd_config`
 **开启密钥登录**
 `PubkeyAuthentication yes`
 **去掉注释启用这行，意思是指定公钥位置**

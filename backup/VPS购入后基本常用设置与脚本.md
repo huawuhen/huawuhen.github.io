@@ -16,8 +16,8 @@ bash <(curl -sL https://run.NodeQuality.com)
 ## bbr加速
 ` bash <(curl -fsSL https://raw.githubusercontent.com/byJoey/Actions-bbr-v3/main/install.sh) `
 ## 强烈更改SSH默认端口
+修改默认22为9022
 ```
-意修改默认22为9022
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
 ## SSH密钥登录
@@ -26,6 +26,7 @@ sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 `ssh-keygen -t ed25519` **无备注版** 
 **将本地生成公钥加入到VPS**
 `vim ~/.ssh/authorized_keys`  **填入本机的公钥**
+### 修改ssh配置 `sudo vim /etc/ssh/sshd_config`
 **开启密钥登录**
 `PubkeyAuthentication yes`
 **去掉注释启用这行，意思是指定公钥位置**

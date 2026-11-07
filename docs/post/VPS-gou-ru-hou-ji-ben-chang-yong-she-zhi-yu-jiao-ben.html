@@ -25,8 +25,8 @@ bash <(curl -sL https://run.NodeQuality.com)
 ## bbr加速
 ` bash <(curl -fsSL https://raw.githubusercontent.com/byJoey/Actions-bbr-v3/main/install.sh) `
 ## 强烈更改SSH默认端口
+修改默认22为9022
 ```
-意修改默认22为9022
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
 ## SSH密钥登录
@@ -35,6 +35,7 @@ sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 `ssh-keygen -t ed25519` **无备注版** 
 **将本地生成公钥加入到VPS**
 `vim ~/.ssh/authorized_keys`  **填入本机的公钥**
+### 修改ssh配置 `sudo vim /etc/ssh/sshd_config`
 **开启密钥登录**
 `PubkeyAuthentication yes`
 **去掉注释启用这行，意思是指定公钥位置**
@@ -105,8 +106,8 @@ bash <(curl -sL https://run.NodeQuality.com)
 ## bbr加速
 ` bash <(curl -fsSL https://raw.githubusercontent.com/byJoey/Actions-bbr-v3/main/install.sh) `
 ## 强烈更改SSH默认端口
+修改默认22为9022
 ```
-意修改默认22为9022
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
 ## SSH密钥登录
@@ -115,6 +116,7 @@ sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 `ssh-keygen -t ed25519` **无备注版** 
 **将本地生成公钥加入到VPS**
 `vim ~/.ssh/authorized_keys`  **填入本机的公钥**
+### 修改ssh配置 `sudo vim /etc/ssh/sshd_config`
 **开启密钥登录**
 `PubkeyAuthentication yes`
 **去掉注释启用这行，意思是指定公钥位置**
@@ -251,16 +253,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>bbr加速</h2>
 <p><code class="notranslate">bash &lt;(curl -fsSL https://raw.githubusercontent.com/byJoey/Actions-bbr-v3/main/install.sh)</code></p>
 <h2>强烈更改SSH默认端口</h2>
-<pre class="notranslate"><code class="notranslate">意修改默认22为9022
-sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
+<p>修改默认22为9022</p>
+<pre class="notranslate"><code class="notranslate">sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 </code></pre>
 <h2>SSH密钥登录</h2>
 <p><strong>本地设备创建密钥，会生成一对公钥/私钥</strong><br>
 <code class="notranslate">ssh-keygen -t ed25519 -C "win11"</code>  **加 -C 是给密钥加个备注我这里加了win11备注这个不需要也可以<br>
 <code class="notranslate">ssh-keygen -t ed25519</code> <strong>无备注版</strong><br>
 <strong>将本地生成公钥加入到VPS</strong><br>
-<code class="notranslate">vim ~/.ssh/authorized_keys</code>  <strong>填入本机的公钥</strong><br>
-<strong>开启密钥登录</strong><br>
+<code class="notranslate">vim ~/.ssh/authorized_keys</code>  <strong>填入本机的公钥</strong></p>
+<h3>修改ssh配置 <code class="notranslate">sudo vim /etc/ssh/sshd_config</code></h3>
+<p><strong>开启密钥登录</strong><br>
 <code class="notranslate">PubkeyAuthentication yes</code><br>
 <strong>去掉注释启用这行，意思是指定公钥位置</strong><br>
 <code class="notranslate">AuthorizedKeysFile .ssh/authorized_keys</code><br>
