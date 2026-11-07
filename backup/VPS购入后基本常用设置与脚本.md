@@ -21,19 +21,20 @@ bash <(curl -sL https://run.NodeQuality.com)
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
 ## SSH密钥登录
-**本地设备创建密钥**
+**本地设备创建密钥，会生成一对公钥/私钥**
 `ssh-keygen -t ed25519 -C "win11"`  **加 -C 是给密钥加个备注我这里加了win11备注这个不需要也可以
 `ssh-keygen -t ed25519` **无备注版** 
 **将本地生成公钥加入到VPS**
 `vim ~/.ssh/authorized_keys`  **填入本机的公钥**
 **开启密钥登录**
 `PubkeyAuthentication yes`
-** 去掉注释启用这行指定公钥位置的代码**
+**去掉注释启用这行，意思是指定公钥位置**
 `AuthorizedKeysFile .ssh/authorized_keys`
 **禁止掉密码登录**
 `PasswordAuthentication no`
 **重启sshd服务**
 `sudo systemctl restart ssh`
+**本机ssh登录VPS是携带生成的私钥即可无需密码**
 
  
 

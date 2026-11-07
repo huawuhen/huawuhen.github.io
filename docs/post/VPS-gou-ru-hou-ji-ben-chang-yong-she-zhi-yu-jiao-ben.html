@@ -30,19 +30,20 @@ bash <(curl -sL https://run.NodeQuality.com)
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
 ## SSH密钥登录
-**本地设备创建密钥**
+**本地设备创建密钥，会生成一对公钥/私钥**
 `ssh-keygen -t ed25519 -C 'win11'`  **加 -C 是给密钥加个备注我这里加了win11备注这个不需要也可以
 `ssh-keygen -t ed25519` **无备注版** 
 **将本地生成公钥加入到VPS**
 `vim ~/.ssh/authorized_keys`  **填入本机的公钥**
 **开启密钥登录**
 `PubkeyAuthentication yes`
-** 去掉注释启用这行指定公钥位置的代码**
+**去掉注释启用这行，意思是指定公钥位置**
 `AuthorizedKeysFile .ssh/authorized_keys`
 **禁止掉密码登录**
 `PasswordAuthentication no`
 **重启sshd服务**
 `sudo systemctl restart ssh`
+**本机ssh登录VPS是携带生成的私钥即可无需密码**
 
  
 
@@ -109,19 +110,20 @@ bash <(curl -sL https://run.NodeQuality.com)
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
 ## SSH密钥登录
-**本地设备创建密钥**
+**本地设备创建密钥，会生成一对公钥/私钥**
 `ssh-keygen -t ed25519 -C 'win11'`  **加 -C 是给密钥加个备注我这里加了win11备注这个不需要也可以
 `ssh-keygen -t ed25519` **无备注版** 
 **将本地生成公钥加入到VPS**
 `vim ~/.ssh/authorized_keys`  **填入本机的公钥**
 **开启密钥登录**
 `PubkeyAuthentication yes`
-** 去掉注释启用这行指定公钥位置的代码**
+**去掉注释启用这行，意思是指定公钥位置**
 `AuthorizedKeysFile .ssh/authorized_keys`
 **禁止掉密码登录**
 `PasswordAuthentication no`
 **重启sshd服务**
 `sudo systemctl restart ssh`
+**本机ssh登录VPS是携带生成的私钥即可无需密码**
 
  
 
@@ -253,19 +255,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 </code></pre>
 <h2>SSH密钥登录</h2>
-<p><strong>本地设备创建密钥</strong><br>
-<code class="notranslate">ssh-keygen -t ed25519 -C "win11"</code>  <strong>加 -C 是给密钥加个备注我这里加了win11备注这个不需要也可以<br>
-<code class="notranslate">ssh-keygen -t ed25519</code> 无备注版<br>
-将本地生成公钥加入到VPS<br>
-<code class="notranslate">vim ~/.ssh/authorized_keys</code>  填入本机的公钥<br>
-开启密钥登录<br>
+<p><strong>本地设备创建密钥，会生成一对公钥/私钥</strong><br>
+<code class="notranslate">ssh-keygen -t ed25519 -C "win11"</code>  **加 -C 是给密钥加个备注我这里加了win11备注这个不需要也可以<br>
+<code class="notranslate">ssh-keygen -t ed25519</code> <strong>无备注版</strong><br>
+<strong>将本地生成公钥加入到VPS</strong><br>
+<code class="notranslate">vim ~/.ssh/authorized_keys</code>  <strong>填入本机的公钥</strong><br>
+<strong>开启密钥登录</strong><br>
 <code class="notranslate">PubkeyAuthentication yes</code><br>
-** 去掉注释启用这行指定公钥位置的代码</strong><br>
+<strong>去掉注释启用这行，意思是指定公钥位置</strong><br>
 <code class="notranslate">AuthorizedKeysFile .ssh/authorized_keys</code><br>
 <strong>禁止掉密码登录</strong><br>
 <code class="notranslate">PasswordAuthentication no</code><br>
 <strong>重启sshd服务</strong><br>
-<code class="notranslate">sudo systemctl restart ssh</code></p>
+<code class="notranslate">sudo systemctl restart ssh</code><br>
+<strong>本机ssh登录VPS是携带生成的私钥即可无需密码</strong></p>
 <h2>安装ufw防火墙</h2>
 <p><code class="notranslate">apt install ufw -y</code><br>
 <strong>ufw防火墙基本规则</strong></p>
