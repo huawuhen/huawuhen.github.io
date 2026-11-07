@@ -20,6 +20,23 @@ bash <(curl -sL https://run.NodeQuality.com)
 意修改默认22为9022
 sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 ```
+## SSH密钥登录
+**本地设备创建密钥**
+`ssh-keygen -t ed25519 -C "win11"`  **加 -C 是给密钥加个备注我这里加了win11备注这个不需要也可以
+`ssh-keygen -t ed25519` **无备注版** 
+**将本地生成公钥加入到VPS**
+`vim ~/.ssh/authorized_keys`  **填入本机的公钥**
+**开启密钥登录**
+`PubkeyAuthentication yes`
+** 去掉注释启用这行指定公钥位置的代码**
+`AuthorizedKeysFile .ssh/authorized_keys`
+**禁止掉密码登录**
+`PasswordAuthentication no`
+**重启sshd服务**
+`sudo systemctl restart ssh`
+
+ 
+
 ## 安装ufw防火墙
 `apt install ufw -y`
 **ufw防火墙基本规则**
