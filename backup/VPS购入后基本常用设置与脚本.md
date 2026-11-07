@@ -36,7 +36,7 @@ sed -i 's/^#Port 22/Port 9022/' /etc/ssh/sshd_config
 `PasswordAuthentication no`
 **重启sshd服务**
 `sudo systemctl restart ssh`
-**本机ssh登录VPS是携带生成的私钥即可无需密码**
+**本机ssh登录VPS时携带生成的私钥即可无需密码**
 
  
 
